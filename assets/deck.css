@@ -1,0 +1,734 @@
+/* Shin Jae Wan Portfolio — 메인 장표
+   큰 화면: 16:9 한 장씩 넘기는 발표 화면 (html.is-deck)
+   휴대폰·작은 창 · '스크롤로 보기': 위아래로 읽는 화면
+   색은 site.css의 고정 색만 씁니다. */
+
+/* ═════════ 공통 (스크롤로 볼 때 기본) ═════════ */
+.deck-page{background:var(--bg)}
+.d-top{position:sticky;top:0;z-index:50;height:60px;display:flex;align-items:center;gap:1rem;padding-inline:var(--side);background:rgba(250,247,242,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.d-nav{display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none;margin-left:auto;mask-image:linear-gradient(90deg,transparent 0,#000 12px,#000 calc(100% - 12px),transparent 100%)}
+.d-nav::-webkit-scrollbar{display:none}
+.d-nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-2);padding:.42rem .8rem;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+.d-nav a:hover{background:var(--bg-soft);color:var(--ink)}
+.d-nav a.on{background:var(--ink);color:#fff}
+.d-tools{display:flex;gap:.4rem;flex:none}
+.d-btn{font-size:.85rem;font-weight:600;padding:.38rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:.35rem}
+.d-btn:hover{border-color:var(--ink)}
+.d-btn kbd,.d-hint kbd,.start-cue kbd{font:inherit;font-size:.72em;font-weight:700;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 .35em;background:var(--card);color:var(--ink-2)}
+.d-tools [data-toc],.d-tools [data-fs]{display:none}
+.d-tools [data-view]{display:none}
+.can-deck .d-tools [data-view]{display:inline-flex}
+.d-arrow,.d-bot,.d-toc,.start-cue{display:none}
+
+.slide{padding-block:var(--pad);scroll-margin-top:60px}
+.slide:nth-child(even){background:var(--bg-soft)}
+.slide:nth-child(even) .chip,.slide:nth-child(even) .stg-n,.slide:nth-child(even) .ser-num div,.slide:nth-child(even) .mk-num div{background:var(--bg)}
+.sl{width:100%;max-width:calc(var(--max) + 2 * var(--side));margin-inline:auto;padding-inline:var(--side);display:flex;flex-direction:column;gap:clamp(22px,3vw,34px)}
+.s-home{padding-block:clamp(32px,5vw,72px)}
+.slide .foot{padding-block:.6rem 0}
+
+/* 표지 */
+.s-cover{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.s-cover .collage .tile:not(.big) .media img{object-position:top}
+
+/* 한눈에: 순서 바로가기 */
+.jump a{position:relative}
+.jump .go{margin-left:auto;color:var(--ink-3);font-weight:700;transition:transform .15s,color .15s}
+.jump a:hover .go{color:var(--coral-text);transform:translateX(3px)}
+
+/* 영상: 다음 장 안내 */
+.go-next{display:flex;flex-direction:column;gap:.15rem;text-decoration:none;border-style:dashed;transition:border-color .15s}
+.go-next b{font-size:1rem}
+.go-next span{font-size:.86rem;color:var(--navy);font-weight:600}
+.go-next:hover{border-color:var(--ink-3)}
+
+/* 드론: 사진 + 영상 목록 */
+.drone2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.vlist{display:flex;flex-direction:column;gap:.7rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem}
+.vlist-h{display:flex;justify-content:space-between;align-items:baseline}
+.vlist-h b{font-size:1.02rem}
+.vrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:.9rem;align-items:center}
+.vrow .vthumb{border-radius:10px}
+.vrow .vbody{padding:0;gap:.3rem}
+
+/* 방송: 카드 셋 */
+.live3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,1.05fr);gap:var(--gap)}
+.live3 .card{display:flex;flex-direction:column;gap:.55rem}
+.live3 .big{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--line);display:flex;flex-direction:column}
+.live3 .big b{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;color:var(--navy)}
+.live3 .big span{font-size:.86rem;color:var(--ink-3)}
+.link-card.v{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+.link-card.v .in{justify-content:flex-start}
+
+/* 홍보 */
+.mk .card h4 .note{font-weight:500;margin-left:.4rem}
+
+/* AI 작업 */
+.pcard h4 small{display:block;font-size:.86rem;font-weight:500;color:var(--ink-3)}
+.pcard .media .new{position:absolute;left:.6rem;top:.6rem;z-index:2;font-size:.72rem;font-weight:800;letter-spacing:.06em;background:var(--coral);color:var(--ink);padding:.12rem .55rem;border-radius:999px}
+.prail .pcard:hover{transform:none}
+.tools6 .pcard.sm .media{width:38%}
+
+/* 경력 */
+.gstats{margin-top:.4rem}
+.career .stack .card h4{margin-bottom:.45rem}
+.learn{color:var(--ink-2);margin:.1rem 0 .6rem;font-size:.95rem}
+
+/* ═════════ 장표 (큰 화면) ═════════ */
+html.is-deck,.is-deck body{height:100%;overflow:hidden}
+.is-deck body{background:var(--bg-soft)}
+.is-deck .to-top,.is-deck .skip{display:none}
+.is-deck .deck{position:fixed;inset:0;overflow:hidden;background:var(--bg-soft)}
+.is-deck .stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform:translate(-50%,-50%) scale(var(--z,1));transform-origin:center;background:var(--bg);overflow:hidden;font-size:19px;
+  --gap:18px;--r:14px;--side:0px;--pad:0px;box-shadow:0 0 0 1px var(--line)}
+.is-deck{font-size:19px}
+
+/* 위쪽 줄 */
+.is-deck .d-top{position:absolute;inset:0 0 auto 0;height:72px;padding:0 100px;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;gap:28px}
+.is-deck .logo{font-size:17px}
+.is-deck .d-nav{margin:0 auto;mask-image:none;gap:4px}
+.is-deck .d-nav a{font-size:16px;padding:7px 14px}
+.is-deck .d-tools{gap:8px}
+.is-deck .d-btn{font-size:14px;padding:6px 13px}
+.is-deck .d-tools [data-toc],.is-deck .d-tools [data-fs]{display:inline-flex}
+
+/* 장 */
+.is-deck .slides{position:absolute;inset:0}
+.is-deck .slide{position:absolute;inset:0;padding:84px 100px 76px;background:var(--bg);visibility:hidden;opacity:0;transform:translateX(70px);
+  transition:transform .5s cubic-bezier(.22,.7,.2,1),opacity .5s,visibility 0s .5s}
+.is-deck .slide.before{transform:translateX(-70px)}
+.is-deck .slide.cur{visibility:visible;opacity:1;transform:none;transition:transform .5s cubic-bezier(.22,.7,.2,1),opacity .5s,visibility 0s}
+.is-deck .slide:nth-child(even){background:var(--bg)}
+.is-deck .sl{max-width:none;margin:0;padding:0;height:100%;gap:20px}
+.is-deck .sl > .grow{flex:1;min-height:0}
+.is-deck .slide .foot{display:none}
+
+/* 제목 */
+.is-deck .head{gap:6px;max-width:1240px}
+.is-deck .eyebrow{font-size:15px}
+.is-deck .eyebrow i{min-width:30px;height:30px;font-size:13px}
+.is-deck .head h2{font-size:40px;line-height:1.25}
+.is-deck .head p{font-size:18px}
+.is-deck .sub h3{font-size:22px}
+.is-deck .card{padding:22px 24px}
+.is-deck .note{font-size:15px}
+
+/* 1. 표지 */
+.is-deck .s-home{padding-top:96px}
+.is-deck .s-cover{height:100%;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:64px;position:relative}
+.is-deck .hero-txt{display:flex;flex-direction:column;gap:22px}
+.is-deck .name{font-size:16px}
+.is-deck .hero-txt h1{font-size:58px;line-height:1.2;font-weight:700;letter-spacing:-.03em}
+.is-deck .hero-txt h1 em{font-style:normal;color:var(--coral)}
+.is-deck .lead{font-size:20px}
+.is-deck .btn{font-size:17px;min-height:50px}
+.is-deck .kpi b{font-size:24px}
+.is-deck .kpi span{font-size:14px}
+.is-deck .tile .lab b{font-size:16px}
+.is-deck .tile .lab small{font-size:13px}
+.is-deck .start-cue{display:block;position:absolute;right:0;bottom:-6px;font-size:15px;color:var(--ink-3);margin:0}
+.is-deck .start-cue::after{content:" →";color:var(--coral-text);font-weight:700}
+
+/* 2. 단계 */
+.is-deck .stages{gap:16px}
+.is-deck .stg{padding:18px}
+.is-deck .stg-h b{font-size:21px}
+.is-deck .stg-n b{font-size:28px}
+.is-deck .stg-n span{font-size:14px}
+.is-deck .stg .dotlist li{font-size:16px}
+.is-deck .stg-w{font-size:13.5px}
+.is-deck .tchip{font-size:14px}
+
+/* 3. 걸어온 길 */
+.is-deck .diagram{padding:20px 24px}
+.is-deck .diagram-h b{font-size:18px}
+.is-deck .diagram-h span,.is-deck .legend{font-size:14px}
+.is-deck #journey .mm{min-height:200px}
+.is-deck .jump{gap:16px}
+.is-deck .jump a{padding:18px 20px}
+.is-deck .jump b{font-size:19px}
+.is-deck .jump small{font-size:15px}
+
+/* 4. 영상 성과 */
+.is-deck .vstats{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:stretch}
+.is-deck .chart{padding:22px 24px;gap:14px}
+.is-deck .chart-h b{font-size:18px}
+.is-deck .bars{gap:9px}
+.is-deck .bars li{grid-template-columns:300px minmax(0,1fr) 54px}
+.is-deck .bars .bl{font-size:15px}
+.is-deck .bars .bt{height:16px}
+.is-deck .bars b{font-size:15px}
+.is-deck .series{gap:16px}
+.is-deck .ser p{font-size:16px}
+.is-deck .ser-num b{font-size:22px}
+.is-deck .ser-num b.rl{font-size:15px}
+.is-deck .ser-num span{font-size:13px}
+.is-deck .go-next{margin-top:auto}
+
+/* 5·10. 슬라이더 */
+.is-deck .rail{display:flex;flex-direction:column;gap:16px}
+.is-deck .rail .track{flex:1;min-height:0;align-items:stretch}
+.is-deck .filters button{font-size:15px;min-height:40px}
+.is-deck .rail-ctl button{width:48px;height:48px;font-size:20px}
+.is-deck .rcount{font-size:15px}
+.is-deck .vtitle{font-size:18px}
+.is-deck .vmeta{font-size:14.5px}
+.is-deck .vbody{padding:16px 18px 18px;gap:8px}
+.is-deck .tag{font-size:13px}
+.is-deck .vthumb .play i{width:56px;height:56px}
+
+/* 6. 드론 */
+.is-deck .drone2{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.is-deck .award .aw-tx{padding:18px 22px}
+.is-deck .award .aw-tx b{font-size:20px}
+.is-deck .award .aw-tx p{font-size:16px}
+.is-deck .vlist{padding:20px;gap:14px}
+.is-deck .vlist-h b{font-size:18px}
+.is-deck .vrow .vtitle{font-size:18px}
+
+/* 7. 방송 */
+.is-deck #live .mm{min-height:150px}
+.is-deck .live3 .card h4,.is-deck .link-card .in b{font-size:19px}
+.is-deck .when{font-size:14px}
+.is-deck .dotlist li{font-size:16px}
+.is-deck .live3 .big b{font-size:26px}
+.is-deck .link-card .in{padding:16px 20px}
+.is-deck .link-card .in p{font-size:15.5px}
+.is-deck .link-card.v .media{aspect-ratio:16/7}
+
+/* 8. 홍보 */
+.is-deck .mk{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:stretch}
+.is-deck .mk .card{gap:12px}
+.is-deck .mk .card h4{font-size:20px}
+.is-deck .mk .card > p{font-size:16.5px;color:var(--ink-2)}
+.is-deck .mk-num b{font-size:24px}
+.is-deck .mk-num span{font-size:13.5px}
+.is-deck .mini-flow li{font-size:14px}
+.is-deck .news a{font-size:14px}
+.is-deck .vtl{gap:0}
+.is-deck .vtl li{padding:5px 0 7px}
+.is-deck .vtl li::before{top:10px}
+.is-deck .vtl .d{font-size:13px}
+.is-deck .vtl b{font-size:16px;line-height:1.35}
+.is-deck .vtl p{font-size:14.5px;line-height:1.45}
+
+/* 9. 도구 지도 */
+.is-deck .xmap{gap:6px 40px;align-content:center;flex:1}
+.is-deck #ai .diagram{justify-content:space-between}
+.is-deck .xr{grid-template-columns:150px 48px minmax(0,1fr);padding:12px 0}
+.is-deck .xe{font-size:16px;padding:10px 12px}
+.is-deck .xt{padding:8px 14px}
+.is-deck .xt b{font-size:17px}
+.is-deck .xt small{font-size:13.5px}
+
+/* 10·11. 작업 카드 */
+.is-deck .pcard .pb{padding:16px 20px 18px;gap:7px}
+.is-deck .pcard .kind{font-size:14px}
+.is-deck .pcard h4{font-size:21px}
+.is-deck .pcard h4 small{font-size:15px}
+.is-deck .pcard p{font-size:16px}
+.is-deck .checks li{font-size:15.5px}
+.is-deck .pcard .from{font-size:14px}
+.is-deck .pcard .more{font-size:16px}
+.is-deck .pcard .try{font-size:14.5px}
+.is-deck .prail .media{aspect-ratio:16/8.4}
+.is-deck .tools6{grid-template-rows:repeat(2,minmax(0,1fr))}
+.is-deck .tools6 .pcard.sm .pb{padding:14px 16px;gap:5px}
+.is-deck .tools6 .pcard.sm h4{font-size:18px}
+.is-deck .tools6 .pcard.sm p{font-size:14.5px}
+.is-deck .soon{padding:12px 20px}
+.is-deck .soon b{font-size:17px}
+.is-deck .soon p{font-size:15.5px}
+
+/* 12. 경력 */
+.is-deck .career{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:stretch}
+.is-deck .gantt{padding:20px 24px;justify-content:space-between}
+.is-deck .gr{padding:9px 0;grid-template-columns:330px minmax(0,1fr)}
+.is-deck .g-axis{grid-template-columns:330px minmax(0,1fr)}
+.is-deck .gl b{font-size:16px}
+.is-deck .gl span{font-size:13.5px}
+.is-deck .gt em,.is-deck .ticks span{font-size:12.5px}
+.is-deck .stat b{font-size:30px}
+.is-deck .stat span{font-size:14px}
+.is-deck .career .stack{gap:14px}
+.is-deck .career .stack .card{padding:16px 20px}
+.is-deck .career .stack h4{font-size:18px}
+.is-deck .career .dotlist li{font-size:15px}
+.is-deck .learn{font-size:15px}
+.is-deck .chip{font-size:14.5px}
+
+/* 13. 연락 */
+.is-deck .skills .card h4{font-size:19px}
+.is-deck .contact{padding:40px 52px}
+.is-deck .contact h2{font-size:40px}
+.is-deck .contact p{font-size:18px}
+.is-deck .contact .mail{font-size:24px}
+
+/* 화살표 · 아래 줄 · 목차 */
+.is-deck .d-arrow{display:grid;place-items:center;position:absolute;top:50%;margin-top:-28px;width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);font-size:22px;cursor:pointer;z-index:6;transition:opacity .2s,transform .15s,border-color .15s}
+.is-deck .d-arrow.prev{left:22px}
+.is-deck .d-arrow.next{right:22px}
+.is-deck .d-arrow:hover:not(:disabled){border-color:var(--ink);transform:scale(1.06)}
+.is-deck .d-arrow:disabled{opacity:.25;cursor:default}
+.is-deck .d-bot{display:flex;position:absolute;inset:auto 0 0 0;height:64px;padding:0 100px;align-items:center;justify-content:space-between;gap:24px;z-index:5}
+.d-count{display:flex;align-items:baseline;gap:8px;min-width:280px;font-variant-numeric:tabular-nums}
+.d-count b{font-size:20px;font-weight:800}
+.d-count span{font-size:15px;color:var(--ink-3)}
+.d-count em{font-style:normal;font-size:15px;font-weight:600;color:var(--ink-2);margin-left:8px}
+.d-dots{display:flex;gap:8px;align-items:center}
+.d-dots button{width:10px;height:10px;border-radius:999px;border:0;background:var(--line);padding:0;cursor:pointer;transition:width .25s,background .25s}
+.d-dots button:hover{background:var(--ink-3)}
+.d-dots button.on{width:28px;background:var(--coral)}
+.d-hint{min-width:280px;text-align:right;font-size:14px;color:var(--ink-3)}
+.d-hint kbd{margin:0 2px}
+.d-prog{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--line)}
+.d-prog i{display:block;height:100%;width:0;background:var(--coral);transition:width .4s}
+.is-deck .d-toc:not([hidden]){display:grid;place-items:center;position:absolute;inset:0;z-index:20;background:rgba(30,30,34,.16);backdrop-filter:blur(3px)}
+.d-toc-box{width:1180px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:0 30px 80px -20px rgba(30,30,34,.4)}
+.d-toc-h{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.d-toc-h b{font-size:26px}
+.d-toc-h span{font-size:15px;color:var(--ink-3)}
+.d-toc-h .d-btn{margin-left:auto}
+.d-toc-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.d-toc-g a{display:flex;gap:12px;align-items:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,transform .15s}
+.d-toc-g a:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+.d-toc-g a.on{border-color:var(--coral);background:var(--coral-soft)}
+.d-toc-g i{font-style:normal;font-weight:800;font-size:15px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.d-toc-g small{display:block;font-size:13px;color:var(--coral-text);font-weight:700}
+.d-toc-g b{display:block;font-size:17px;line-height:1.3}
+
+/* 스크롤로 볼 때: 화면 크기별 */
+@media (max-width:1100px){
+  .s-cover,.drone2{grid-template-columns:minmax(0,1fr)}
+  .live3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .live3 .link-card{grid-column:span 2}
+  .link-card.v{grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);grid-template-rows:auto}
+  .tools6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .d-top{height:56px}
+  .slide{scroll-margin-top:56px}
+  .tools6{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .live3{grid-template-columns:minmax(0,1fr)}
+  .live3 .link-card{grid-column:auto}
+  .link-card.v{grid-template-columns:minmax(0,1fr)}
+  .vrow{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:.7rem}
+  .d-top .logo{font-size:.9rem}
+  .d-top{gap:.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .is-deck .slide,.is-deck .slide.cur{transition:none}
+}
+@media print{
+  .d-top,.d-arrow,.d-bot,.d-toc{display:none!important}
+}
+
+/* ── 다듬기 ── */
+.jump2{grid-template-columns:repeat(4,minmax(0,1fr))}
+.jump2 a{flex-direction:column;align-items:stretch;gap:.7rem;padding:1.1rem 1.2rem}
+.jump2 .jt{display:flex;align-items:center;gap:.7rem}
+.jump2 .jt b{font-size:1.1rem}
+.jump2 .jt em{margin-left:auto;font-style:normal;font-size:.8rem;font-weight:700;color:var(--ink-3);white-space:nowrap}
+.jump2 .dotlist li{font-size:.92rem}
+.jump2 .go{margin:auto 0 0;font-size:.88rem;color:var(--navy)}
+.vtl2 li{display:grid;grid-template-columns:7.2rem minmax(0,1fr);gap:.8rem;align-items:baseline}
+.vtl2 li::before{top:.85rem}
+@media (max-width:1100px){.jump2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.jump2{grid-template-columns:minmax(0,1fr)}.vtl2 li{grid-template-columns:minmax(0,1fr);gap:0}}
+
+.is-deck .jump2 a{padding:22px 24px;gap:14px}
+.is-deck .jump2 .jt b{font-size:21px}
+.is-deck .jump2 .jt em{font-size:14px}
+.is-deck .jump2 .dotlist li{font-size:17px}
+.is-deck .jump2 .go{font-size:16px}
+.is-deck #journey .mm svg{width:100%;max-width:1240px}
+.is-deck .vrail .track{align-items:start}
+.is-deck .vrail .vthumb{aspect-ratio:16/10}
+.is-deck .vrail .vtitle{font-size:19px}
+.is-deck .award .media{aspect-ratio:16/8}
+.is-deck #live .mm{min-height:120px}
+.is-deck .link-card.v .media{aspect-ratio:16/6}
+.is-deck .live3 .card{gap:9px}
+.is-deck .mk .card{gap:11px}
+.is-deck .mini-flow{flex-wrap:nowrap}
+.is-deck .mini-flow li{padding:6px 10px}
+.is-deck .vtl2 li{grid-template-columns:118px minmax(0,1fr);gap:12px;padding:6px 0}
+.is-deck .vtl2 li::before{top:11px}
+.is-deck .vtl2 b{font-size:16px}
+.is-deck .vtl2 p{font-size:14px}
+.is-deck .contact h2{font-size:48px}
+.is-deck .mini-flow li{flex:1 1 auto;margin-right:20px}.is-deck .mini-flow li:last-child{margin-right:0}
+.is-deck .deck,.is-deck .stage,.is-deck .slides{overflow:hidden;overflow:clip}
+.is-deck #live .legend{display:none}
+.is-deck #journey .mm svg{max-width:1180px}
+.is-deck .jump2 a{padding:18px 22px;gap:12px}
+.is-deck .mk{align-items:start}
+.hero-txt h1{font-size:clamp(2.05rem,4.4vw,3.5rem);line-height:1.22;font-weight:700;letter-spacing:-.03em}
+.hero-txt h1 em{font-style:normal;color:var(--coral)}
+
+/* ═════════ 팀 프로젝트 장 · 업무 도구 7개 · PDF 단추 ═════════ */
+.d-btn.pdf{background:var(--coral-soft);border-color:var(--coral-soft);color:var(--coral-text);text-decoration:none}
+.d-btn.pdf:hover{border-color:var(--coral)}
+.tools7{grid-template-columns:repeat(2,minmax(0,1fr))}
+.go-team{border-style:dashed;background:var(--bg-soft);text-decoration:none}
+.go-team .pb{justify-content:center}
+.go-team h4{color:var(--navy)}
+.team2 .tcard .media{aspect-ratio:16/8}
+.tcard h4 small{display:block;font-size:.86rem;font-weight:500;color:var(--ink-3)}
+.tcard .d-meta{grid-template-columns:repeat(3,minmax(0,1fr));margin:.2rem 0}
+.tcard .checks{margin-bottom:.2rem}
+.tp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.tp-l{display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.tp-r{min-width:0}
+.rail.one-up .track{--vis:1}
+.rail.one-up .shot{cursor:zoom-in}
+.tnums{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tmine{display:flex;flex-direction:column;gap:.6rem}
+.tmine h4 .note{font-weight:500;margin-left:.3rem}
+.tmine .chips{list-style:none}
+.tmine .more{font-weight:600;color:var(--navy);text-decoration:none;font-size:.93rem}
+@media (min-width:1101px){.tools7{grid-template-columns:repeat(3,minmax(0,1fr))}.tnums{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:1100px){.team2,.tp{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.tools7{grid-template-columns:minmax(0,1fr)}.tcard .d-meta{grid-template-columns:minmax(0,1fr)}}
+
+.is-deck .jump2{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.is-deck .jump2 a{padding:16px 18px;gap:10px}
+.is-deck .jump2 .jt b{font-size:18px}
+.is-deck .jump2 .dotlist li{font-size:15px}
+.is-deck .tools7{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.is-deck .tools7 .pcard.sm{flex-direction:column}
+.is-deck .tools7 .pcard.sm .media{width:100%;aspect-ratio:16/7;min-height:0;border-right:0;border-bottom:1px solid var(--line)}
+.is-deck .tools7 .pcard.sm .pb{padding:12px 16px 14px;gap:4px}
+.is-deck .tools7 .pcard.sm h4{font-size:17px}
+.is-deck .tools7 .pcard.sm p{font-size:14px;-webkit-line-clamp:2}
+.is-deck .tools7 .pcard.sm .from{font-size:12.5px}
+.is-deck .tools7 .go-team p{-webkit-line-clamp:4}
+.is-deck .team2 .tcard{flex-direction:column}
+.is-deck .team2 .tcard .media{aspect-ratio:auto;height:250px;flex:none}
+.is-deck .team2 .tcard .pb{padding:16px 22px 18px;gap:8px}
+.is-deck .team2 .tcard h4{font-size:22px}
+.is-deck .team2 .tcard p{font-size:16px}
+.is-deck .tcard .d-meta div{padding:8px 12px}
+.is-deck .tcard .d-meta span{font-size:12.5px}
+.is-deck .tcard .d-meta b{font-size:14px;line-height:1.35}
+.is-deck .tcard .checks li{font-size:15px}
+.is-deck .tp{height:100%;align-items:stretch}
+.is-deck .tp-l{gap:14px}
+.is-deck .tp .stat{padding:10px 14px}
+.is-deck .tp .stat b{font-size:22px}
+.is-deck .tp .stat span{font-size:13px}
+.is-deck .tmine{padding:16px 20px;gap:10px}
+.is-deck .tmine h4{font-size:18px}
+.is-deck .tmine .chip{font-size:14px}
+.is-deck .tp-r .rail{height:100%}
+.is-deck .tp-r .rail .track{align-items:start}
+.is-deck .tp-r .shot > span{font-size:15px;padding:10px 14px}
+.is-deck .cmp{gap:10px}
+.is-deck .cmp li{grid-template-columns:120px minmax(0,1fr) 130px}
+.is-deck .cmp .cl{font-size:15.5px}
+.is-deck .cmp .cb i{height:11px}
+.is-deck .cmp b{font-size:15px}
+.is-deck #press .mm{min-height:150px}
+
+/* 라이브도크 카드: 그림 높이를 고정해 글자를 가리지 않게 */
+.is-deck .link-card.v{display:flex;flex-direction:column}
+.is-deck .link-card.v .media{flex:none;height:150px;aspect-ratio:auto}
+.is-deck .link-card.v .in{flex:1;min-height:0;justify-content:flex-start}
+.is-deck #journey .mm svg{max-width:1060px}
+.is-deck .link-card.v .media{height:132px}
+.is-deck .tools7 .pcard.sm .media{aspect-ratio:16/5.2}
+.is-deck .tools7 .pcard.sm .from{display:none}
+.is-deck .team2 .tcard .media{height:180px}
+.is-deck .team2 .tcard p{font-size:15px}
+.is-deck .tcard .checks{gap:2px}
+.is-deck .tcard .checks li{font-size:14.5px}
+.is-deck .tp .stat b{font-size:20px}
+
+/* ═════════ PDF로 뽑을 때 (장마다 한 쪽) ═════════ */
+html.pdf,html.pdf body{height:auto;width:1600px;overflow:hidden;background:var(--bg)}
+html.pdf.is-deck .track > *:nth-child(n+4),html.pdf.is-deck .one-up .track > *:nth-child(n+2){display:none}
+html.pdf.is-deck .deck{position:static;overflow:visible}
+html.pdf.is-deck .stage{position:static;transform:none;width:1600px;height:auto;overflow:visible;box-shadow:none;counter-reset:pg}
+html.pdf.is-deck .d-top,html.pdf.is-deck .d-bot,html.pdf.is-deck .d-arrow,html.pdf.is-deck .d-toc,html.pdf.is-deck .to-top,html.pdf.is-deck .modal{display:none!important}
+html.pdf.is-deck .slides{position:static}
+html.pdf.is-deck .slide{position:relative;inset:auto;width:1600px;height:900px;visibility:visible;opacity:1;transform:none;transition:none;break-after:page;page-break-after:always;overflow:hidden;counter-increment:pg}
+html.pdf.is-deck .slide::before{content:"SHIN JAE WAN.";position:absolute;left:100px;top:30px;font-weight:800;font-size:17px;letter-spacing:.06em;color:var(--ink)}
+html.pdf.is-deck .slide::after{content:counter(pg, decimal-leading-zero) " / 16  ·  " attr(data-title);position:absolute;left:100px;bottom:26px;font-size:15px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+html.pdf.is-deck .slide .rail-ctl{visibility:hidden}
+html.pdf.is-deck .track{overflow:hidden}
+@page{size:1600px 900px;margin:0}
+html.pdf.is-deck .slide:last-child{break-after:auto;page-break-after:auto}
+
+/* ═════════ 통일 규칙 (2026-10-22) ═════════ */
+/* 보기 방식 메뉴 */
+.d-menu{position:relative}
+.d-pop{position:absolute;right:0;top:calc(100% + 6px);z-index:30;display:flex;flex-direction:column;min-width:170px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px}
+.d-pop[hidden]{display:none}
+.d-pop button{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;font-size:.88rem;font-weight:600;padding:8px 10px;border:0;border-radius:8px;background:none;cursor:pointer;color:var(--ink)}
+.d-pop button:hover{background:var(--bg-soft)}
+.d-tools [data-viewmenu]{display:none}
+.can-deck .d-tools [data-viewmenu]{display:inline-flex}
+.d-tools .d-pop [data-view],.d-tools .d-pop [data-fs]{display:flex}
+html:not(.is-deck) .d-pop [data-fs]{display:none}
+.is-deck .d-pop button{font-size:14px}
+
+/* 팀 프로젝트 비교표 */
+.tcmp{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.4rem 1.2rem}
+.tc-row{display:grid;grid-template-columns:8rem minmax(0,1fr) minmax(0,1fr);gap:1.4rem;align-items:center;padding:.7rem 0;border-bottom:1px dashed var(--line)}
+.tc-row:last-child{border-bottom:0}
+.tc-k{font-size:.85rem;font-weight:700;color:var(--ink-3)}
+.tc-row > div{font-size:.98rem;color:var(--ink)}
+.tc-head{align-items:end}
+.tc-h{display:flex;gap:1rem;align-items:center}
+.tc-img{display:block;width:12rem;flex:none;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.tc-img img{width:100%;height:100%;display:block}
+.tc-t{display:flex;flex-direction:column;gap:.25rem;align-items:flex-start}
+.tc-t b{font-size:1.25rem;line-height:1.25}
+.tc-t small{font-size:.85rem;color:var(--ink-3)}
+.tc-acts > div{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.tc-acts .more{font-weight:600;color:var(--navy);text-decoration:none;font-size:.93rem}
+@media (max-width:820px){
+  .tc-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.4rem 1rem}
+  .tc-k{grid-column:1 / -1}
+  .tc-head > span,.tc-acts > span{display:none}
+  .tc-h{flex-direction:column;align-items:flex-start}
+  .tc-img{width:100%}
+}
+
+/* 장표 글씨 4단계: 제목 40 · 카드 제목 19 · 본문 16 · 작은 글씨 14 */
+.is-deck .stage{--t-card:19px;--t-body:16px;--t-small:14px}
+.is-deck .pcard h4,.is-deck .card h4,.is-deck .vtitle,.is-deck .award .aw-tx b,.is-deck .live3 .card h4,.is-deck .link-card .in b,.is-deck .mk .card h4,
+.is-deck .stg-h b,.is-deck .jump2 .jt b,.is-deck .chart-h b,.is-deck .diagram-h b,.is-deck .vlist-h b,.is-deck .tmine h4,.is-deck .skills .card h4,.is-deck .career .stack h4{font-size:var(--t-card)}
+.is-deck .pcard p,.is-deck .ser p,.is-deck .award .aw-tx p,.is-deck .link-card .in p,.is-deck .mk .card > p,.is-deck .dotlist li,.is-deck .checks li,.is-deck .jump2 .dotlist li{font-size:var(--t-body)}
+.is-deck .pcard .kind,.is-deck .when,.is-deck .note,.is-deck .diagram-h span,.is-deck .legend,.is-deck .vmeta,.is-deck .tag,.is-deck .chip,.is-deck .stat span,.is-deck .stg-n span,.is-deck .stg-w{font-size:var(--t-small)}
+.is-deck .code,.is-deck .use{font-size:13.5px;padding:5px 12px}
+.is-deck .pcard .more{font-size:15px}
+.is-deck .tools7 .pcard.sm h4{font-size:17px}
+.is-deck .tools7 .pcard.sm p{font-size:14px}
+.is-deck .tools7 .pcard.sm .media{aspect-ratio:16/7}
+.is-deck .tools7 .acts .more{display:none}
+.is-deck .tools7 .acts{justify-content:flex-end}
+.is-deck .prail .media{aspect-ratio:16/8}
+.is-deck .wake{font-size:12px}
+/* 비교표 장표 크기 */
+.is-deck .tcmp{padding:6px 26px;justify-content:space-between}
+.is-deck .tc-row{grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:28px;padding:12px 0}
+.is-deck .tc-k{font-size:15px}
+.is-deck .tc-row > div{font-size:var(--t-body)}
+.is-deck .tc-img{width:230px}
+.is-deck .tc-t b{font-size:24px}
+.is-deck .tc-t small{font-size:14px}
+.is-deck .status{font-size:13px}
+/* 영상 목록: 카드 묶음을 세로 가운데로 */
+.is-deck .vrail{justify-content:center}
+.is-deck .vrail .track{flex:none}
+.is-deck .tools7 .pcard.sm .media{aspect-ratio:16/6}
+.is-deck .tools7 .pcard.sm .pb{gap:3px;padding:10px 14px 12px}
+.is-deck .live3 .link-card .in{padding:12px 18px}
+.is-deck .link-card.v .media{height:124px}
+.is-deck .jump2 .jt b{white-space:nowrap;font-size:17px}
+.is-deck .cmp li{grid-template-columns:110px minmax(0,1fr) 170px}
+.tflow{display:flex;flex-direction:column;gap:.6rem}
+.tflow h4 .note{font-weight:500;margin-left:.3rem}
+.tflow .mini-flow li::before{content:none}
+.tflow .mini-flow li b{font-size:.9rem}
+.is-deck .tflow{padding:14px 20px;gap:10px}
+.is-deck .tflow .mini-flow{flex-wrap:nowrap}
+.is-deck .tflow .mini-flow li{flex:1 1 auto;margin-right:18px;font-size:13px}
+.is-deck .tflow .mini-flow li:last-child{margin-right:0}
+.is-deck .tflow .mini-flow li b{font-size:14.5px}
+.is-deck #gyeong .legend{display:none}
+.is-deck #gyeong .cmp{gap:6px}
+.is-deck #gyeong .diagram{padding:14px 22px;gap:8px}
+.is-deck #gyeong .tmine{gap:8px;padding:12px 20px}
+html.pdf .wake{display:none!important}
+.is-deck .prail .media{aspect-ratio:auto;height:150px}
+/* v5 여백 정리 (10.22) */
+/* 홍보: 두 칸을 아래까지 채우고 내용 간격을 고르게 */
+.is-deck .mk{align-items:stretch}
+.is-deck .mk .card{justify-content:space-between;padding:28px 30px}
+.is-deck .mk .card h4{font-size:22px}
+.is-deck .mk .card > p{font-size:17px;line-height:1.75}
+.is-deck .mk-num > div{padding:20px 20px}
+.is-deck .mk-num b{font-size:30px}
+.is-deck .mk-num span{font-size:14.5px}
+.is-deck .mk .mini-flow li{padding:14px 12px}
+.is-deck .mk .vtl2{flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:8px}
+.is-deck .mk .vtl2 b{font-size:17px}
+.is-deck .mk .vtl2 p{font-size:14.5px}
+/* 팀 비교표: 그림을 키우고 줄 간격은 좁게 */
+.is-deck .tc-img{width:320px}
+.is-deck .tc-row{padding:10px 0}
+.is-deck .tc-head .tc-k{align-self:center;line-height:1.5}
+/* 팀 상세: 오른쪽 사진 칸을 왼쪽 높이에 맞춰 꽉 채움 */
+.is-deck .tp-r .rail{display:flex;flex-direction:column}
+.is-deck .tp-r .rail .track{flex:1;min-height:0;align-items:stretch}
+.is-deck .tp-r .shot{display:flex;flex-direction:column;height:100%}
+.is-deck .tp-r .shot .media{flex:1;min-height:0;aspect-ratio:auto}
+.is-deck .tp-r .shot .media img{object-fit:cover;object-position:var(--fp,0 0)}
+.is-deck .tp-l{display:flex;flex-direction:column;height:100%;min-height:0}
+.is-deck .tp-l > :last-child{flex:1}
+.is-deck .tp-l > .card:last-child{display:flex;flex-direction:column;justify-content:center}
+/* 한눈에: 다섯 단계 카드 안 빈 곳 줄이기 */
+.is-deck .stg{padding:20px 22px;gap:14px}
+.is-deck .stg-h b{font-size:23px}
+.is-deck .stg-n{padding:20px 18px}
+.is-deck .stg-n b{font-size:36px}
+.is-deck .stg-n span{font-size:15px}
+.is-deck .stg .dotlist{gap:12px}
+.is-deck .stg .dotlist li{font-size:17.5px;line-height:1.6}
+.is-deck .stg-w{font-size:14.5px}
+/* 걸어온 길: 흐름도를 카드 폭에 맞게 크게 */
+.is-deck #journey .mm svg{max-width:1340px!important;max-height:none!important;height:auto}
+/* 팀 프로젝트(12): 위에 큰 그림, 아래에 짧은 비교표 */
+.tm{display:flex;flex-direction:column;gap:var(--gap)}
+.tm-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.tm-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.tm-img{display:block;aspect-ratio:16/8;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.tm-img img{width:100%;height:100%;object-fit:cover;display:block}
+.tm-cap{display:flex;justify-content:space-between;align-items:center;gap:.6rem 1rem;padding:.9rem 1.2rem;flex-wrap:wrap}
+.tm-acts{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.tm-acts .more{font-weight:600;color:var(--navy);text-decoration:none;font-size:.93rem}
+.tm-tbl .tc-head > div{font-weight:700;display:flex;align-items:center;gap:.45rem}
+.tm-tbl .tc-head .dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--coral);display:inline-block}
+.tm-tbl .tc-head > div:last-child .dot{background:var(--navy)}
+@media (max-width:820px){.tm-top{grid-template-columns:minmax(0,1fr)}.tm-tbl .tc-head > div{font-size:.9rem}}
+.is-deck .tm-top{flex:1;min-height:0}
+.is-deck .tm-card .tm-img{flex:1;min-height:0;aspect-ratio:auto}
+.is-deck .tm-cap{padding:14px 22px}
+.is-deck .tm .tc-t b{font-size:24px}
+.is-deck .tm-tbl{padding:4px 24px;flex:none}
+.is-deck .tm-tbl .tc-row{padding:7px 0;gap:24px}
+.is-deck .tm-tbl .tc-row > div{font-size:15px}
+.is-deck .tm-tbl .tc-k{font-size:14px}
+.tm-t{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .7rem}
+.tm-t b{font-size:1.3rem;line-height:1.2}
+.tm-t small{flex-basis:100%;font-size:.88rem;color:var(--ink-3)}
+.is-deck .tm-cap{padding:12px 22px}
+.is-deck .tm-t b{font-size:24px}
+.is-deck .tm-t small{font-size:14px}
+.is-deck .tm-tbl .tc-row{padding:5px 0}
+.is-deck .tm-tbl .tc-row > div{font-size:14.5px}
+.is-deck .tm-tbl .tc-k{font-size:13.5px}
+.is-deck .tm-cap{flex-wrap:nowrap}
+.is-deck .tm-t{flex:1;min-width:0}
+.is-deck .tm-acts{flex-wrap:nowrap;flex:none}
+.tm-img{position:relative}
+.tm-img .status{position:absolute;right:14px;top:14px;z-index:2;background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+/* 13·14장 같은 틀: 왼쪽 40% 요약, 오른쪽 60% 사진 */
+.tmine h4 .more{margin-left:auto;font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none}
+.tmine h4{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.role-work{margin-top:var(--gap)}
+.is-deck .tp{grid-template-columns:minmax(0,2fr) minmax(0,3fr)}
+.is-deck .tp-l{gap:12px}
+.is-deck .tp-l > :last-child{flex:none}
+.is-deck .tp-l > .card:last-child{display:block}
+.is-deck .tp-l > .diagram,.is-deck .tp-l > .mm-wrap{flex:1;min-height:0}
+.is-deck .tp .diagram{padding:14px 18px}
+.is-deck .tp .diagram-h b{font-size:17px}
+.is-deck .tp .diagram-h span{font-size:12.5px}
+.is-deck .tp .tnums{gap:8px}
+.is-deck .tp .stat{padding:8px 10px}
+.is-deck .tp .stat b{font-size:17px}
+.is-deck .tp .stat span{font-size:12px;line-height:1.35}
+.is-deck .tp .card{padding:12px 16px}
+.is-deck .tp .card h4{font-size:16px;margin-bottom:8px}
+.is-deck .tp .chips{gap:6px}
+.is-deck .tp .chip{font-size:13px;padding:4px 10px}
+.is-deck .tp .mini-flow li{padding:6px 8px;font-size:13px;margin-right:18px}
+.is-deck .tp .mini-flow li small{font-size:11.5px}
+.is-deck .tp .cmp li{padding:2px 0}
+.is-deck .tp .cmp li{padding:0;min-height:0}
+.is-deck .tp .cmp{gap:4px}
+.is-deck .tp .cmp .cl,.is-deck .tp .cmp b{font-size:14px}
+.is-deck .tp .tnums .stat b{font-size:16px;white-space:nowrap}
+.is-deck .tp .mini-flow li{padding:5px 7px;margin-right:14px}
+.is-deck .tp .diagram{display:flex;flex-direction:column}
+.is-deck .tp .diagram .mm{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.is-deck .tp .diagram .mm svg{width:100%!important;max-width:none!important;height:auto;max-height:100%}
+.is-deck .tp .cmp{flex:1;display:flex;flex-direction:column;justify-content:space-around}
+/* 카드: 이름 · 소개 · 특징 2개 · 버튼 */
+.pcard .pb .intro{color:var(--ink-3);margin:0}
+.is-deck .pcard .pb .intro{font-size:15px}
+.is-deck .pcard .checks li{font-size:15.5px}
+.is-deck .tools7 .pcard .pb{gap:6px;padding-top:12px;padding-bottom:12px}
+.is-deck .tools7 .pcard .checks{gap:2px}
+.is-deck .tools7 .pcard .checks li{font-size:14.5px;line-height:1.5}
+.is-deck .tools7 .pcard .pb .intro{font-size:14px}
+.is-deck .prail .pcard{display:flex;flex-direction:column}
+.is-deck .prail .pcard .media{flex:1 1 auto;height:auto;min-height:150px}
+.is-deck .prail .pcard .pb{flex:none}
+.tflow h4{margin-bottom:.7rem}
+/* 특징 3개: 그림을 조금 줄임 */
+.is-deck .tools7 .pcard.sm .media{aspect-ratio:16/5.1}
+.is-deck .tools7 .pcard .pb{gap:4px;padding-top:10px;padding-bottom:10px}
+.is-deck .tools7 .pcard .checks li{font-size:14px;line-height:1.45}
+.is-deck .prail .pcard .media{min-height:130px}
+.is-deck .prail .pcard .media{flex:none;height:250px;min-height:0}
+.is-deck .prail .pcard .pb{flex:1;display:flex;flex-direction:column}
+.is-deck .prail .pcard .acts{margin-top:auto}
+.is-deck .prail .pcard h4{font-size:22px}
+.is-deck .prail .pcard .pb .intro{font-size:16px}
+.is-deck .prail .pcard .checks li{font-size:16.5px}
+/* v6 좌우 칸 높이 맞추기 (10.22) */
+/* 04 영상 제작: 막대를 칸 아래까지 고르게 */
+.is-deck .vstats .chart{display:flex;flex-direction:column}
+.is-deck .vstats .chart .bars{flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:10px}
+.is-deck .vstats .chart .bars li{font-size:15.5px}
+.is-deck .vstats .chart .bars .bt{height:16px}
+.is-deck .vstats .chart .bars .bt i{height:100%}
+/* 06 드론: 두 칸 아래 끝 맞춤, 남는 높이는 사진이 차지 */
+.is-deck .drone2{align-items:stretch}
+.is-deck .award{display:flex;flex-direction:column}
+.is-deck .award .aw-ph{flex:1;min-height:0;display:block}
+.is-deck .award .aw-ph .media{height:100%;aspect-ratio:auto}
+/* 15 경력: 오른쪽 세 칸이 왼쪽 높이를 나눠 가짐 */
+.is-deck .career{align-items:stretch}
+.is-deck .career .stack{display:flex;flex-direction:column}
+.is-deck .career .stack > .card{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+.is-deck .career .stack .dotlist{gap:10px}
+/* 05 영상 목록: 썸네일 조금 크게 */
+.is-deck .vrail .vcard .vthumb{aspect-ratio:16/11}
+/* 07 라이브: 흐름도 크게 */
+.is-deck .vrail .track{align-items:stretch}
+/* v7 여백 고르게 (10.22) */
+/* 04 영상: 오른쪽 세 칸 사이 간격 똑같이, 두 연재 칸이 남는 높이를 나눠 가짐 */
+.is-deck .series{display:flex;flex-direction:column;gap:16px}
+.is-deck .series > .card.ser{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+.is-deck .series > :last-child{flex:none}
+/* 09 도구 지도: 위아래 여백 같게, 단추 크게 */
+.is-deck #ai .diagram{display:flex;flex-direction:column}
+.is-deck #ai .xmap{flex:1;align-content:space-evenly;padding:10px 0}
+.is-deck #ai .xe{font-size:17px;padding:14px 22px;min-width:150px}
+.is-deck #ai .xt{padding:10px 16px}
+.is-deck #ai .xt b{font-size:17px}
+.is-deck #ai .xt small{font-size:13.5px}
+.is-deck #ai .legend{margin-top:6px}
+/* 13·14 팀 상세: 넘기기 단추를 제목 줄 오른쪽으로 올리고, 사진 위 끝을 왼쪽 칸과 맞춤 */
+.is-deck .tp-r{position:relative}
+.is-deck .tp-r .rail-h{position:absolute;right:0;bottom:calc(100% + 14px);margin:0;gap:18px}
+.is-deck .tp-r .rail .track{height:100%}
+.is-deck #ai .xr{grid-template-columns:180px 56px minmax(0,1fr);padding:14px 0}
+.is-deck #ai .xe{font-size:19px;padding:16px 18px}
+.is-deck #ai .xt{padding:12px 20px}
+.is-deck #ai .xt b{font-size:19px}
+.is-deck #ai .xt small{font-size:14.5px}
+.is-deck #ai .xr{padding:6px 0}
+.is-deck #ai .xe{padding:12px 16px;font-size:18px}
+.is-deck #ai .xt{padding:9px 18px}
+.is-deck #ai .xt b{font-size:18px}
+.is-deck #ai .xt small{font-size:14px}
+.is-deck #ai .xmap{padding:0}
+/* v8 (10.22) */
+/* 01 처음: 단추 줄을 숫자 칸 폭에 맞추고, 오른쪽 그림 묶음을 제목 위 끝 ~ 숫자 칸 아래 끝에 맞춤 */
+.is-deck .s-cover .btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.is-deck .s-cover .btns .btn{justify-content:center;text-align:center;padding-left:8px;padding-right:8px}
+.is-deck .s-cover .collage{align-self:stretch;margin-top:51px;grid-template-rows:minmax(0,1fr) auto}
+.is-deck .s-cover .collage .tile.big .media{height:100%;aspect-ratio:auto}
+/* 04 영상: 연재 칸 숫자 상자 안 글자 높이 맞춤 */
+.is-deck .ser-num b{min-height:30px;display:flex;align-items:center}
+/* 06 드론: 오른쪽 목록의 마지막 줄 아래 끝을 왼쪽 글 아래 끝과 맞춤 */
+.is-deck .drone2 .vlist{justify-content:space-between}
+.is-deck .s-cover .collage{margin-top:62px;margin-bottom:11px}

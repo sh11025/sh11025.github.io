@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서울 주거 데이터 스토리 | Shin Jae Wan Portfolio</title>
+<meta name="description" content="전월세 거래 81만 건을 누구나 이해하는 이야기와 그래프로 풀고, 다음 달 거래량을 예측했습니다.">
+<meta name="author" content="Shin Jae Wan">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shin Jae Wan Portfolio">
+<meta property="og:title" content="서울 주거 데이터 스토리 | Shin Jae Wan Portfolio">
+<meta property="og:description" content="전월세 거래 81만 건을 누구나 이해하는 이야기와 그래프로 풀고, 다음 달 거래량을 예측했습니다.">
+<meta property="og:url" content="https://sh11025.github.io/projects/seoul-housing.html">
+<meta property="og:image" content="https://sh11025.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FAF7F2">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+
+<body class="has-toc">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="../index.html">Shin Jae Wan<span>.</span></a>
+  <a class="back" href="../index.html#ai">← 작업 목록으로</a>
+</div><div class="progress" aria-hidden="true"></div></header>
+<nav class="toc-bar" aria-label="이 페이지 목차"><div class="wrap"><a href="#summary">한눈에</a><a href="#why">왜 만들었나요</a><a href="#how">작동 방식</a><a href="#fix">문제 해결</a><a href="#shots">화면</a></div></nav>
+<main id="main">
+<section class="d-top" id="intro"><div class="wrap">
+<div class="d-txt">
+  <div class="crumb"><a href="../index.html">홈</a> › <a href="../index.html#ai">AI 활용 작업</a> › 서울 주거 데이터 스토리</div>
+  <h1>서울 주거 데이터 스토리</h1>
+  <p class="lead">전월세 거래 81만 건을 누구나 이해하는 이야기와 그래프로 풀고, 다음 달 거래량을 예측했습니다.</p>
+  <div class="tags"><span class="tag hot">정보 전달 콘텐츠</span><span class="tag">데이터 분석</span><span class="tag">예측</span></div>
+  <div class="btns"><a class="btn fill" href="https://sh11025.github.io/SEOUL_HOUSING_DATA/" target="_blank" rel="noopener">사용해 보기 <i aria-hidden="true">↗</i></a><a class="btn ghost code" href="https://github.com/sh11025/SEOUL_HOUSING_DATA" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
+  <div class="d-meta"><div><span>만든 사람</span><b>1인 기획·분석·제작</b></div><div><span>다룬 기간</span><b>2023.01 ~ 2025.12 (36개월)</b></div><div><span>다룬 지역</span><b>서울 25개 구 전체</b></div></div>
+</div>
+<div class="d-cover-wrap"><button type="button" class="d-cover" data-zoom="../assets/img/seoul-home.gif" data-cap="서울 주거 데이터 스토리" aria-label="대표 화면 크게 보기"><div class="media"><img src="../assets/img/seoul-home.gif" alt="서울 주거 데이터 스토리 대표 화면" width="960" height="540"></div></button><p class="note">이미지를 누르면 크게 볼 수 있어요.</p></div>
+</div></section>
+<section class="sec alt" id="summary"><div class="wrap">
+<div class="head"><div class="eyebrow">한눈에 보기</div><h2>세 줄로 보는 서울 주거 데이터 스토리</h2></div>
+<div class="psr rv"><div class="p"><span class="k">불편했던 점</span><b>숫자만 봐서는 와닿지 않는 &#x27;서울 집&#x27; 이야기</b><p>뉴스에 자주 나오지만 일반 시민에게는 어렵습니다.</p></div><div class="s"><span class="k">이렇게 풀었어요</span><b>81만 건 거래를 이야기와 그래프로</b><p>공공데이터 5종을 합쳐 클릭 몇 번으로 이해하는 화면을 만들었습니다.</p></div><div class="r"><span class="k">그래서 이렇게 됐어요</span><b>실제 흐름을 약 89% 설명하는 예측</b><p>25개 구의 다음 달 거래량을 예측해 시민용 웹 6쪽으로 공개했습니다.</p></div></div>
+</div></section>
+<section class="sec" id="why"><div class="wrap"><div class="why">
+<div class="txt"><div class="head"><div class="eyebrow">배경</div><h2>왜 만들었나요</h2></div><p>&quot;서울의 집은 지금 어디로 움직이고 있을까?&quot; 뉴스에서 자주 나오지만 숫자만 봐서는 와닿지 않는 이야기를, 일반 시민이 클릭 몇 번으로 이해할 수 있는 화면으로 만들고 싶었습니다.</p><p>홍보 일을 하며 배운 &#x27;어려운 내용을 쉽게 전달하는 법&#x27;을 데이터에 적용한 작업입니다.</p></div>
+<div class="rv"><div class="nums"><div class="stat hot"><b>81만 2,501건</b><span>분석한 전월세 실거래</span></div><div class="stat"><b>0.8892</b><span>결정계수 · 실제 거래 흐름의 약 89%를 설명</span></div><div class="stat"><b>106건</b><span>구별 한 달 거래량 예측의 평균 오차</span></div><div class="stat"><b>5종</b><span>합친 공공데이터 (거래·인구이동·생활인구·금리·빈집)</span></div></div></div>
+</div></div></section>
+<section class="sec alt" id="how"><div class="wrap">
+<div class="head"><div class="eyebrow">작동 방식</div><h2>어떻게 작동하나요</h2></div>
+<figure class="diagram rv"><div class="diagram-h"><b>데이터가 이야기가 되기까지</b><span>공공데이터 5종 → 시민용 화면</span></div><div class="mm" role="img" aria-label="데이터가 이야기가 되기까지" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
+  D1(&quot;전월세 거래&quot;):::soft --&gt; M
+  D2(&quot;인구 이동&quot;):::soft --&gt; M
+  D3(&quot;생활인구&quot;):::soft --&gt; M
+  D4(&quot;금리&quot;):::soft --&gt; M
+  D5(&quot;빈집&quot;):::soft --&gt; M
+  M(&quot;정리하고 하나로 합치기&quot;):::navy --&gt; A(&quot;이야기로 풀기&lt;br/&gt;빈집 · 거래가 활발한 곳&quot;)
+  M --&gt; F(&quot;다음 달 거래량 예측&lt;br/&gt;25개 구&quot;):::hot
+  A --&gt; W(&quot;시민용 웹 6쪽&lt;br/&gt;우리 동네 탐색기&quot;):::hot
+  F --&gt; W
+  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
+  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
+  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
+  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>공공데이터 5종</li><li>정리·합치기</li><li>이야기로 풀기 + 다음 달 예측</li><li>시민용 웹 6쪽</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>4가지</p></div><div class="g c4"><div class="feat rv"><span class="fi">1</span><b>빈집은 정말 늘었을까?</b><p>2025년 서울의 빈집은 약 12만 6천 호로 전년보다 23% 늘었고, 그 절반 이상이 아파트였습니다.</p></div><div class="feat rv"><span class="fi">2</span><b>무엇이 다음 달 거래를 좌우할까?</b><p>지난달 거래량의 영향이 가장 컸고, 그다음은 실제로 동네를 오가는 &#x27;생활인구&#x27;였습니다.</p></div><div class="feat rv"><span class="fi">3</span><b>2026년 1월 예측</b><p>25개 구의 다음 달 거래량을 예측했습니다. 예: 서대문구는 신학기 영향으로 28% 늘 것으로 예상.</p></div><div class="feat rv"><span class="fi">4</span><b>우리 동네 탐색기</b><p>지도에서 구를 누르면 거래·인구·빈집·예측을 한 화면에 보여 줍니다.</p></div></div>
+</div></section>
+<section class="sec" id="fix"><div class="wrap">
+<div class="head"><div class="eyebrow">문제 해결</div><h2>만들며 부딪힌 문제와 해결</h2><p>3가지 문제를 직접 찾아 고쳤습니다.</p></div>
+<div class="fixes"><div class="fx rv"><div class="q"><small>부딪힌 문제</small><b>공공데이터 서버가 접속을 거부함</b></div><div class="ar" aria-hidden="true">→</div><div class="a"><small>이렇게 해결</small><p>인증키가 두 번 변환되던 문제를 찾아 바로잡았습니다.</p></div></div><div class="fx rv"><div class="q"><small>부딪힌 문제</small><b>연도마다 파일 형식과 항목 이름이 다름</b></div><div class="ar" aria-hidden="true">→</div><div class="a"><small>이렇게 해결</small><p>연도별로 읽는 방식을 나누고 항목 이름을 하나로 맞췄습니다.</p></div></div><div class="fx rv"><div class="q"><small>부딪힌 문제</small><b>예측이 &#x27;미래를 엿보는&#x27; 위험</b></div><div class="ar" aria-hidden="true">→</div><div class="a"><small>이렇게 해결</small><p>과거로 공부하고 그 뒤의 기간으로 시험하도록 시간 순서대로 나눠 공정하게 검증했습니다.</p></div></div></div>
+<div class="tech-row"><b>사용한 기술</b><div class="tech"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="src-link" href="https://github.com/sh11025/SEOUL_HOUSING_DATA" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
+</div></section>
+<section class="sec alt" id="shots"><div class="wrap">
+<div class="head"><div class="eyebrow">화면</div><h2>화면 모아보기 <span class="note">9장</span></h2><p>이미지를 누르면 크게 볼 수 있고, 크게 본 상태에서 ← → 키로 넘길 수 있어요.</p></div>
+<div class="rail gal" aria-label="화면 슬라이드"><div class="rail-h"><span class="note">← → 버튼이나 옆으로 밀어서 넘겨 보세요</span><div class="rail-ctl"><button type="button" data-prev aria-label="이전 화면">←</button><span class="rcount" aria-live="polite"></span><button type="button" data-next aria-label="다음 화면">→</button></div></div><div class="track"><button type="button" class="shot" data-zoom="../assets/img/seoul-forecast.webp" data-cap="2026년 1월 예측 화면" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-forecast.webp" alt="2026년 1월 예측 화면" width="1280" height="714"></div><span><i>01</i>2026년 1월 예측 화면</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-05.webp" data-cap="프로젝트 한눈에 보기" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-05.webp" alt="프로젝트 한눈에 보기" width="1280" height="720"></div><span><i>02</i>프로젝트 한눈에 보기</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-06.webp" data-cap="사용한 데이터" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-06.webp" alt="사용한 데이터" width="1280" height="720"></div><span><i>03</i>사용한 데이터</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-10.webp" data-cap="빈집 변화" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-10.webp" alt="빈집 변화" width="1280" height="720"></div><span><i>04</i>빈집 변화</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-13.webp" data-cap="거래가 활발한 지역" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-13.webp" alt="거래가 활발한 지역" width="1280" height="720"></div><span><i>05</i>거래가 활발한 지역</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-23.webp" data-cap="예측과 실제 비교" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-23.webp" alt="예측과 실제 비교" width="1280" height="720"></div><span><i>06</i>예측과 실제 비교</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-24.webp" data-cap="2026년 1월 예측" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-24.webp" alt="2026년 1월 예측" width="1280" height="720"></div><span><i>07</i>2026년 1월 예측</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-27.webp" data-cap="웹 대시보드" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-27.webp" alt="웹 대시보드" width="1280" height="720"></div><span><i>08</i>웹 대시보드</span></button><button type="button" class="shot" data-zoom="../assets/img/seoul-slide-28.webp" data-cap="직접 해결한 문제" data-group="shots"><div class="media"><img loading="lazy" src="../assets/img/seoul-slide-28.webp" alt="직접 해결한 문제" width="1280" height="720"></div><span><i>09</i>직접 해결한 문제</span></button></div></div>
+</div></section>
+<section class="sec" id="more" style="padding-block:clamp(36px,4vw,56px)"><div class="wrap">
+<nav class="end-bar" aria-label="이전·다음 작업">
+  <a class="end-a" href="livedock.html"><span>← 이전 작업</span><b>라이브도크</b></a>
+  <a class="end-a r" href="hometeo.html"><span>다음 작업 →</span><b>홈터</b></a>
+</nav>
+<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html">스토리 담 이음</a><a href="autoflow.html">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html" class="on" aria-current="page">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
+<div class="btns"><a class="btn ghost" href="../index.html">홈으로</a><a class="btn coral" href="../index.html#contact">연락하기</a></div>
+</div></section>
+</main>
+<p class="foot">© 2026 Shin Jae Wan · 영상 · 홍보 크리에이터</p>
+<script src="../assets/site.js"></script>
+</body></html>
