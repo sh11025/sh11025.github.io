@@ -11,11 +11,12 @@
 <meta property="og:title" content="Virtual Deck | Shin Jae Wan Portfolio">
 <meta property="og:description" content="방송인이 쓰는 버튼 장비(스트림덱) 없이도, 화면 한쪽에 띄운 버튼판을 눌러 단축키·프로그램·폴더·사이트를 한 번에 실행합니다.">
 <meta property="og:url" content="https://sh11025.github.io/projects/virtual-deck.html">
-<meta property="og:image" content="https://sh11025.github.io/assets/img/og.png">
+<meta property="og:image" content="https://sh11025.github.io/assets/img/og/og-virtual-deck.png">
+<meta property="og:image:alt" content="Virtual Deck | Shin Jae Wan Portfolio">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="theme-color" content="#F6F7FB">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -55,10 +56,10 @@
 <figure class="diagram rv"><div class="diagram-h"><b>버튼 하나 만드는 순서</b><span>3단계면 끝나요</span></div><div class="mm" role="img" aria-label="버튼 하나 만드는 순서" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
   A(&quot;버튼 우클릭&quot;):::soft --&gt; B(&quot;편집&quot;):::soft --&gt; C(&quot;이름 · 할 일 고르기&lt;br/&gt;단축키 · 프로그램 · 폴더 · 사이트&quot;):::navy
   C --&gt; D(&quot;아이콘 · 색 자동 추천&quot;):::soft --&gt; E(&quot;저장하면 바로 반영&quot;):::hot
-  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
-  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
-  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
-  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>버튼 우클릭</li><li>편집</li><li>할 일 고르기</li><li>아이콘 추천</li><li>저장</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>누르면 실행되는 9가지</b><p>단축키, 프로그램·파일·폴더·사이트 열기, 소리 조절, 연속 입력, 타이머, 버튼 묶음, 켜기·끄기 스위치.</p></div><div class="feat rv"><span class="fi">2</span><b>프로그램 따라 자동 전환</b><p>지금 쓰는 프로그램을 알아보고 그에 맞는 버튼판(프로필)으로 바꿉니다.</p></div><div class="feat rv"><span class="fi">3</span><b>7가지 유리 스타일</b><p>맑음·밤·젖빛·하늘·노을·숲·투명 중에서 고르고, 유리 맑기와 크기를 조절합니다.</p></div><div class="feat rv"><span class="fi">4</span><b>방송 화면에서는 숨김</b><p>OBS·디스코드 화면 공유와 녹화에는 버튼판이 보이지 않게 했습니다.</p></div><div class="feat rv"><span class="fi">5</span><b>꺼져도 안 깨지는 저장</b><p>설정을 바꿀 때마다 안전하게 저장하고 백업 파일을 남깁니다.</p></div><div class="feat rv"><span class="fi">6</span><b>설치·삭제가 쉬움</b><p>설치 파일 하나로 깔고, 제어판에서 깨끗하게 지울 수 있습니다.</p></div></div><div class="tech-row"><b>사용한 기술</b><div class="tech"><span>Python</span><span>PySide6 (Qt6)</span><span>Windows API</span><span>PyInstaller</span><span>Inno Setup</span></div><a class="src-link" href="https://github.com/sh11025/Virtual_Deck" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
+  classDef hot fill:#E4E7FF,stroke:#2B3BFF,stroke-width:2px,color:#0B0F2A
+  classDef navy fill:#0B0F2A,stroke:#0B0F2A,color:#FFFFFF
+  classDef soft fill:#E9ECF6,stroke:#D8DCEC,color:#0B0F2A
+  classDef tool fill:#FFFFFF,stroke:#0B0F2A,stroke-width:1.5px,color:#0B0F2A</pre><div class="mm-fb"><ol class="fb-flow"><li>버튼 우클릭</li><li>편집</li><li>할 일 고르기</li><li>아이콘 추천</li><li>저장</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>누르면 실행되는 9가지</b><p>단축키, 프로그램·파일·폴더·사이트 열기, 소리 조절, 연속 입력, 타이머, 버튼 묶음, 켜기·끄기 스위치.</p></div><div class="feat rv"><span class="fi">2</span><b>프로그램 따라 자동 전환</b><p>지금 쓰는 프로그램을 알아보고 그에 맞는 버튼판(프로필)으로 바꿉니다.</p></div><div class="feat rv"><span class="fi">3</span><b>7가지 유리 스타일</b><p>맑음·밤·젖빛·하늘·노을·숲·투명 중에서 고르고, 유리 맑기와 크기를 조절합니다.</p></div><div class="feat rv"><span class="fi">4</span><b>방송 화면에서는 숨김</b><p>OBS·디스코드 화면 공유와 녹화에는 버튼판이 보이지 않게 했습니다.</p></div><div class="feat rv"><span class="fi">5</span><b>꺼져도 안 깨지는 저장</b><p>설정을 바꿀 때마다 안전하게 저장하고 백업 파일을 남깁니다.</p></div><div class="feat rv"><span class="fi">6</span><b>설치·삭제가 쉬움</b><p>설치 파일 하나로 깔고, 제어판에서 깨끗하게 지울 수 있습니다.</p></div></div><div class="tech-row"><b>사용한 기술</b><div class="tech"><span>Python</span><span>PySide6 (Qt6)</span><span>Windows API</span><span>PyInstaller</span><span>Inno Setup</span></div><a class="src-link" href="https://github.com/sh11025/Virtual_Deck" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
 </div></section>
 <section class="sec" id="shots"><div class="wrap">
 <div class="head"><div class="eyebrow">화면</div><h2>화면 모아보기 <span class="note">4장</span></h2><p>이미지를 누르면 크게 볼 수 있고, 크게 본 상태에서 ← → 키로 넘길 수 있어요.</p></div>
@@ -69,7 +70,7 @@
   <a class="end-a" href="ootd.html"><span>← 이전 작업</span><b>AI OOTD 스타일리스트</b></a>
   <a class="end-a r" href="mookdog.html"><span>다음 작업 →</span><b>묵독</b></a>
 </nav>
-<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html">스토리 담 이음</a><a href="autoflow.html">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html" class="on" aria-current="page">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
+<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html">스토리 담 이음</a><a href="autoflow.html">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html" class="on" aria-current="page">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="markview.html">MarkView</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
 <div class="btns"><a class="btn ghost" href="../index.html">홈으로</a><a class="btn coral" href="../index.html#contact">연락하기</a></div>
 </div></section>
 </main>

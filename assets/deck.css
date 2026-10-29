@@ -65,7 +65,7 @@
 
 /* AI 작업 */
 .pcard h4 small{display:block;font-size:.86rem;font-weight:500;color:var(--ink-3)}
-.pcard .media .new{position:absolute;left:.6rem;top:.6rem;z-index:2;font-size:.72rem;font-weight:800;letter-spacing:.06em;background:var(--coral);color:var(--ink);padding:.12rem .55rem;border-radius:999px}
+.pcard .media .new{position:absolute;left:.6rem;top:.6rem;z-index:2;font-size:.72rem;font-weight:800;letter-spacing:.06em;background:var(--coral);color:#fff;padding:.12rem .55rem;border-radius:999px}
 .prail .pcard:hover{transform:none}
 .tools6 .pcard.sm .media{width:38%}
 
@@ -283,8 +283,8 @@ html.is-deck,.is-deck body{height:100%;overflow:hidden}
 .d-hint kbd{margin:0 2px}
 .d-prog{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--line)}
 .d-prog i{display:block;height:100%;width:0;background:var(--coral);transition:width .4s}
-.is-deck .d-toc:not([hidden]){display:grid;place-items:center;position:absolute;inset:0;z-index:20;background:rgba(30,30,34,.16);backdrop-filter:blur(3px)}
-.d-toc-box{width:1180px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:0 30px 80px -20px rgba(30,30,34,.4)}
+.is-deck .d-toc:not([hidden]){display:grid;place-items:center;position:absolute;inset:0;z-index:20;background:rgba(11,15,42,.16);backdrop-filter:blur(3px)}
+.d-toc-box{width:1180px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:28px 32px;box-shadow:0 30px 80px -20px rgba(11,15,42,.4)}
 .d-toc-h{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
 .d-toc-h b{font-size:26px}
 .d-toc-h span{font-size:15px;color:var(--ink-3)}
@@ -732,3 +732,27 @@ html.pdf .wake{display:none!important}
 /* 06 드론: 오른쪽 목록의 마지막 줄 아래 끝을 왼쪽 글 아래 끝과 맞춤 */
 .is-deck .drone2 .vlist{justify-content:space-between}
 .is-deck .s-cover .collage{margin-top:62px;margin-bottom:11px}
+
+/* v9 — 연락 장: 폼이 한 화면에 들어가게 압축 */
+.is-deck .contact{padding:26px 44px;gap:32px}
+.is-deck .contact h2{font-size:38px;margin-bottom:.2rem}
+.is-deck .contact p{font-size:17px}
+.is-deck .contact .mail{font-size:22px}
+.is-deck .contact .btns{margin-top:.5rem}
+.is-deck .cf-in{padding:16px 22px}
+.is-deck .cf-in h3{margin-bottom:.35rem;font-size:1.05rem}
+.is-deck .cf-in label{margin-bottom:.35rem;font-size:.82rem}
+.is-deck .cf-in input:not(.cf-hp),.is-deck .cf-in textarea{padding:.4rem .7rem;margin-top:.15rem}
+.is-deck .cf-more{margin-bottom:.35rem}
+.is-deck .cf-act .btn{min-height:40px;padding-top:.4rem;padding-bottom:.4rem}
+.is-deck .slide#contact .skills .card{padding:14px 18px}
+.is-deck .slide#contact .skills .chips{gap:6px}
+html.pdf .cf-in{display:none!important}
+.is-deck .slide#contact:has(.cf-more[open]) .skills{display:none}
+.is-deck .cf-more[open] textarea{height:64px}
+
+/* v10 — 순서 화살표가 칸 사이 정가운데에 오도록 (일부 잘리던 문제) */
+.is-deck .mini-flow li{--g:20px}
+.is-deck .tflow .mini-flow li{--g:18px}
+.is-deck .tp .mini-flow li{--g:14px}
+.is-deck .mini-flow li:not(:last-child)::after{left:100%;right:auto;width:var(--g);text-align:center;font-size:11px;line-height:1;z-index:2;pointer-events:none}

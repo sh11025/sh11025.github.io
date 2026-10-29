@@ -11,11 +11,12 @@
 <meta property="og:title" content="스토리 담 이음 | Shin Jae Wan Portfolio">
 <meta property="og:description" content="채용공고를 넣으면 회사·직무·자격요건을 찾아 채우고, 자기소개서·이력서·면접 준비를 한곳에서 이어서 할 수 있게 돕는 웹사이트입니다.">
 <meta property="og:url" content="https://sh11025.github.io/projects/story-dam-ieum.html">
-<meta property="og:image" content="https://sh11025.github.io/assets/img/og.png">
+<meta property="og:image" content="https://sh11025.github.io/assets/img/og/og-story-dam-ieum.png">
+<meta property="og:image:alt" content="스토리 담 이음 | Shin Jae Wan Portfolio">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="theme-color" content="#F6F7FB">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -60,18 +61,18 @@
   A --&gt;|&quot;면접 준비&quot;| I(&quot;면접 연습&lt;br/&gt;질문 5개&quot;):::hot
   C &lt;-.-&gt;|&quot;경험 ↔ 이력서 자동 연결&quot;| R
   C -.-&gt;|&quot;정리한 경험 참고&quot;| I
-  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
-  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
-  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
-  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>홈</li><li>지원 정보 (공고)</li><li>자기소개서 + 내 경험</li><li>최종 점검 · 저장</li><li>면접 연습</li><li>이력서 (자동 연결)</li></ol></div></div></figure><figure class="diagram rv"><div class="diagram-h"><b>정보는 이렇게 오갑니다</b><span>서버는 아무것도 저장하지 않아요</span></div><div class="mm" role="img" aria-label="정보는 이렇게 오갑니다" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
+  classDef hot fill:#E4E7FF,stroke:#2B3BFF,stroke-width:2px,color:#0B0F2A
+  classDef navy fill:#0B0F2A,stroke:#0B0F2A,color:#FFFFFF
+  classDef soft fill:#E9ECF6,stroke:#D8DCEC,color:#0B0F2A
+  classDef tool fill:#FFFFFF,stroke:#0B0F2A,stroke-width:1.5px,color:#0B0F2A</pre><div class="mm-fb"><ol class="fb-flow"><li>홈</li><li>지원 정보 (공고)</li><li>자기소개서 + 내 경험</li><li>최종 점검 · 저장</li><li>면접 연습</li><li>이력서 (자동 연결)</li></ol></div></div></figure><figure class="diagram rv"><div class="diagram-h"><b>정보는 이렇게 오갑니다</b><span>서버는 아무것도 저장하지 않아요</span></div><div class="mm" role="img" aria-label="정보는 이렇게 오갑니다" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
   U(&quot;내 브라우저&lt;br/&gt;작성한 글 · .sdi 파일&quot;):::soft --&gt;|&quot;공고 주소 · AI 요청&quot;| S(&quot;스토리 담 이음 서버&lt;br/&gt;(Render) · 저장 없음&quot;):::navy
   S --&gt;|&quot;공고 페이지 받아 오기&quot;| J(&quot;채용 사이트&lt;br/&gt;사람인 · 잡코리아 · 원티드&quot;)
   S --&gt;|&quot;내 AI 키로 전달&quot;| AI(&quot;AI 회사&lt;br/&gt;클로드 · 제미나이 · 챗GPT&quot;):::hot
   N(&quot;관리자 화면&lt;br/&gt;(깃허브)&quot;):::tool --&gt;|&quot;공지&quot;| S
-  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
-  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
-  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
-  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>내 브라우저</li><li>스토리 담 이음 서버</li><li>채용 사이트 · AI 회사</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>공고 가져오기</b><p>공고 글을 붙여넣거나 주소만 넣으면 회사명·직무·주요 업무·자격요건·우대사항·마감일을 찾아 채웁니다.</p></div><div class="feat rv"><span class="fi">2</span><b>경험을 보며 쓰는 자기소개서</b><p>쓰는 화면 옆에서 상황·역할·행동·결과로 경험을 정리하고, 버튼 하나로 본문에 넣습니다. 글자 수도 세어 줍니다.</p></div><div class="feat rv"><span class="fi">3</span><b>이력서 자동 연결</b><p>정리한 경험이 이력서의 &#x27;프로젝트·활동&#x27; 또는 &#x27;경력&#x27;에 저절로 들어가고, 한쪽에서 고치면 함께 바뀝니다.</p></div><div class="feat rv"><span class="fi">4</span><b>면접 연습</b><p>공고를 바탕으로 기본 질문 5개에 답하며, 정리한 경험을 옆에 띄워 놓고 연습합니다.</p></div><div class="feat rv"><span class="fi">5</span><b>지원서 여러 개</b><p>회사별로 지원서를 따로 만들고 마감일까지 남은 날(D-day)을 보여 줍니다.</p></div><div class="feat rv"><span class="fi">6</span><b>워드·PDF로 저장</b><p>결과는 워드·PDF로 내려받고, 작업 전체는 파일 하나로 보관했다가 다시 불러옵니다.</p></div></div><p class="privacy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span><b>개인정보 보호</b> — 회원가입 없이 바로 쓰고, 작성한 글은 서버에 저장하지 않습니다. 글은 브라우저와 내려받은 파일에만 남고, 개인 AI 키도 새로고침하면 사라집니다.</span></p>
+  classDef hot fill:#E4E7FF,stroke:#2B3BFF,stroke-width:2px,color:#0B0F2A
+  classDef navy fill:#0B0F2A,stroke:#0B0F2A,color:#FFFFFF
+  classDef soft fill:#E9ECF6,stroke:#D8DCEC,color:#0B0F2A
+  classDef tool fill:#FFFFFF,stroke:#0B0F2A,stroke-width:1.5px,color:#0B0F2A</pre><div class="mm-fb"><ol class="fb-flow"><li>내 브라우저</li><li>스토리 담 이음 서버</li><li>채용 사이트 · AI 회사</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>공고 가져오기</b><p>공고 글을 붙여넣거나 주소만 넣으면 회사명·직무·주요 업무·자격요건·우대사항·마감일을 찾아 채웁니다.</p></div><div class="feat rv"><span class="fi">2</span><b>경험을 보며 쓰는 자기소개서</b><p>쓰는 화면 옆에서 상황·역할·행동·결과로 경험을 정리하고, 버튼 하나로 본문에 넣습니다. 글자 수도 세어 줍니다.</p></div><div class="feat rv"><span class="fi">3</span><b>이력서 자동 연결</b><p>정리한 경험이 이력서의 &#x27;프로젝트·활동&#x27; 또는 &#x27;경력&#x27;에 저절로 들어가고, 한쪽에서 고치면 함께 바뀝니다.</p></div><div class="feat rv"><span class="fi">4</span><b>면접 연습</b><p>공고를 바탕으로 기본 질문 5개에 답하며, 정리한 경험을 옆에 띄워 놓고 연습합니다.</p></div><div class="feat rv"><span class="fi">5</span><b>지원서 여러 개</b><p>회사별로 지원서를 따로 만들고 마감일까지 남은 날(D-day)을 보여 줍니다.</p></div><div class="feat rv"><span class="fi">6</span><b>워드·PDF로 저장</b><p>결과는 워드·PDF로 내려받고, 작업 전체는 파일 하나로 보관했다가 다시 불러옵니다.</p></div></div><p class="privacy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span><b>개인정보 보호</b> — 회원가입 없이 바로 쓰고, 작성한 글은 서버에 저장하지 않습니다. 글은 브라우저와 내려받은 파일에만 남고, 개인 AI 키도 새로고침하면 사라집니다.</span></p>
 </div></section>
 <section class="sec" id="fix"><div class="wrap">
 <div class="head"><div class="eyebrow">문제 해결</div><h2>만들며 부딪힌 문제와 해결</h2><p>5가지 문제를 직접 찾아 고쳤습니다.</p></div>
@@ -87,7 +88,7 @@
   <a class="end-a" href="gyeongseong.html"><span>← 이전 작업</span><b>경성야록</b></a>
   <a class="end-a r" href="autoflow.html"><span>다음 작업 →</span><b>AutoFlow Studio</b></a>
 </nav>
-<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html" class="on" aria-current="page">스토리 담 이음</a><a href="autoflow.html">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
+<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html" class="on" aria-current="page">스토리 담 이음</a><a href="autoflow.html">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="markview.html">MarkView</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
 <div class="btns"><a class="btn ghost" href="../index.html">홈으로</a><a class="btn coral" href="../index.html#contact">연락하기</a></div>
 </div></section>
 </main>

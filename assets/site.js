@@ -369,14 +369,14 @@
   /* ── 읽은 만큼 표시줄 · 맨 위로 ── */
   const bar = $(".progress");
   const up = document.createElement("button");
-  up.type = "button"; up.className = "to-top"; up.setAttribute("aria-label", "맨 위로"); up.textContent = "↑";
+  up.type = "button"; up.className = "to-top"; up.setAttribute("aria-label", "맨 위로 올라가기"); up.innerHTML = '<i aria-hidden="true">↑</i><span>맨 위로</span>';
   up.addEventListener("click", () => scrollTo({top: 0, behavior: reduce ? "auto" : "smooth"}));
   document.body.appendChild(up);
   let ticking = false;
   function onScroll(){
     const max = document.documentElement.scrollHeight - innerHeight;
     if (bar) bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, scrollY / max) : 0) + ")";
-    up.classList.toggle("show", !deckOn() && scrollY > innerHeight * 0.9);
+    up.classList.toggle("show", !deckOn() && scrollY > Math.min(400, innerHeight * 0.5));
     ticking = false;
   }
   addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
@@ -453,4 +453,57 @@
     };
     document.head.appendChild(s);
   }
+})();
+
+/* ── 연락 폼: 디스코드 웹훅으로 전달 ── */
+(function () {
+  const form = document.getElementById("cf");
+  if (!form) return;
+  const msg = form.querySelector(".cf-msg"), send = form.querySelector("[type=submit]");
+  const cfg = window.SJW_CONFIG || {};
+  const say = (t, c) => { msg.textContent = t; msg.className = "cf-msg " + (c || ""); };
+  const clean = v => String(v || "").replace(/[\u0000-\u001f]/g, " ").replace(/@(everyone|here)/gi, "@\u200b$1").trim();
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const f = new FormData(form), d = {};
+    ["name", "email", "company", "role", "msg"].forEach(k => d[k] = clean(f.get(k)));
+    form.querySelectorAll(".bad").forEach(x => x.classList.remove("bad"));
+    const miss = ["name", "email", "company"].filter(k => !d[k]);
+    const okMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email);
+    if (miss.length || !okMail) {
+      (miss.length ? miss : ["email"]).forEach(k => form[k].classList.add("bad"));
+      say(miss.length ? "이름, 회사, 이메일은 꼭 적어 주세요." : "이메일 주소를 다시 확인해 주세요.", "err");
+      return;
+    }
+    if (f.get("website")) { say("전달되었어요. 감사합니다!", "ok"); return; }
+    let last = 0; try { last = +localStorage.getItem("sjw-cf") || 0; } catch (_) {}
+    if (Date.now() - last < 60000) { say("방금 보내셨어요. 1분 뒤에 다시 해 주세요.", "err"); return; }
+    if (!/^https:\/\/(discord|discordapp)\.com\/api\/webhooks\//.test(cfg.webhook || "")) {
+      const body = "이름: " + d.name + "\n회사: " + d.company + "\n직무: " + (d.role || "-") + "\n회신 이메일: " + d.email + "\n\n" + d.msg;
+      location.href = "mailto:" + (cfg.mail || "") + "?subject=" + encodeURIComponent("[포트폴리오] " + d.company + " " + d.name) + "&body=" + encodeURIComponent(body);
+      say("이메일 앱이 열리면 '보내기'를 눌러 주세요.", "ok");
+      return;
+    }
+    send.disabled = true; say("보내는 중…");
+    try {
+      const r = await fetch(cfg.webhook, {
+        method: "POST", headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          username: "포트폴리오 연락", allowed_mentions: {parse: []},
+          embeds: [{
+            title: "새 연락이 도착했어요", color: 0x2B3BFF, timestamp: new Date().toISOString(),
+            fields: [
+              {name: "이름", value: d.name, inline: true}, {name: "회사", value: d.company, inline: true},
+              {name: "직무", value: d.role || "-", inline: true}, {name: "회신 이메일", value: d.email},
+              {name: "전하는 말", value: d.msg || "-"}]
+          }]
+        })
+      });
+      if (!r.ok) throw new Error(r.status);
+      try { localStorage.setItem("sjw-cf", String(Date.now())); } catch (_) {}
+      form.reset(); say("잘 전달되었어요. 확인 후 답장드릴게요. 감사합니다!", "ok");
+    } catch (_) {
+      say("전송에 실패했어요. " + (cfg.mail || "") + " 로 보내 주세요.", "err");
+    } finally { send.disabled = false; }
+  });
 })();

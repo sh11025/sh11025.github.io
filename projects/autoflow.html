@@ -11,11 +11,12 @@
 <meta property="og:title" content="AutoFlow Studio | Shin Jae Wan Portfolio">
 <meta property="og:description" content="반복되는 업무를 블록처럼 이어 붙여 자동으로 돌리는 도구입니다. 처음 쓰는 사람은 위에서 아래로 쌓는 쉬운 모드로, 익숙한 사람은 넓은 판 위에 자유롭게 연결하는 전문가 모드로 만듭니다.">
 <meta property="og:url" content="https://sh11025.github.io/projects/autoflow.html">
-<meta property="og:image" content="https://sh11025.github.io/assets/img/og.png">
+<meta property="og:image" content="https://sh11025.github.io/assets/img/og/og-autoflow.png">
+<meta property="og:image:alt" content="AutoFlow Studio | Shin Jae Wan Portfolio">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="theme-color" content="#F6F7FB">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -59,17 +60,17 @@
   B --&gt;|&quot;바로 처리&quot;| N(&quot;알림 · 저장&lt;br/&gt;카카오톡 · 슬랙 · 노션 · DB&quot;):::hot
   B --&gt;|&quot;사람 확인&quot;| H(&quot;승인 / 반려 창&quot;):::tool
   H --&gt; N
-  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
-  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
-  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
-  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>시작 조건</li><li>개인정보 가리기</li><li>AI 정리</li><li>알림·저장</li></ol></div></div></figure><figure class="diagram rv"><div class="diagram-h"><b>어디서나 같은 자동화</b><span>같은 코드 하나로 세 곳에서 돌아가요</span></div><div class="mm" role="img" aria-label="어디서나 같은 자동화" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
+  classDef hot fill:#E4E7FF,stroke:#2B3BFF,stroke-width:2px,color:#0B0F2A
+  classDef navy fill:#0B0F2A,stroke:#0B0F2A,color:#FFFFFF
+  classDef soft fill:#E9ECF6,stroke:#D8DCEC,color:#0B0F2A
+  classDef tool fill:#FFFFFF,stroke:#0B0F2A,stroke-width:1.5px,color:#0B0F2A</pre><div class="mm-fb"><ol class="fb-flow"><li>시작 조건</li><li>개인정보 가리기</li><li>AI 정리</li><li>알림·저장</li></ol></div></div></figure><figure class="diagram rv"><div class="diagram-h"><b>어디서나 같은 자동화</b><span>같은 코드 하나로 세 곳에서 돌아가요</span></div><div class="mm" role="img" aria-label="어디서나 같은 자동화" data-bp="760" data-wide="LR" data-narrow="TD"><pre class="mm-src">flowchart DIR
   U(&quot;쓰는 곳&lt;br/&gt;윈도우 PC · 휴대폰 · 터치 화면&quot;):::soft --&gt; S(&quot;실행 서버&lt;br/&gt;윈도우(3000번) · 라즈베리 파이(8080번)&quot;):::navy
   S --&gt; E(&quot;자동화 엔진&lt;br/&gt;블록 순서대로 실행 · 되돌리기&quot;):::hot
   E --&gt; X(&quot;바깥 연결&lt;br/&gt;AI · 메신저 · 노션 · 메일&quot;)
-  classDef hot fill:#FFE8E5,stroke:#FF5A4E,stroke-width:2px,color:#1E1E22
-  classDef navy fill:#233A5E,stroke:#233A5E,color:#FFFFFF
-  classDef soft fill:#F2EDE4,stroke:#E6E0D6,color:#1E1E22
-  classDef tool fill:#FFFFFF,stroke:#233A5E,stroke-width:1.5px,color:#233A5E</pre><div class="mm-fb"><ol class="fb-flow"><li>쓰는 곳</li><li>실행 서버</li><li>자동화 엔진</li><li>바깥 연결</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>쉬운 모드 · 전문가 모드</b><p>위에서 아래로 쌓는 카드 모드와, 넓은 판 위에 선으로 잇는 캔버스 모드를 오가며 만듭니다.</p></div><div class="feat rv"><span class="fi">2</span><b>업무별 견본 16종</b><p>재무, 마케팅, 기획, 영업, 법무 견본을 한 번에 가져와 바로 돌립니다.</p></div><div class="feat rv"><span class="fi">3</span><b>AI에게 말로 시키기</b><p>하고 싶은 일을 말로 적으면 AI가 블록 순서를 짜 줍니다.</p></div><div class="feat rv"><span class="fi">4</span><b>개인정보 자동 가리기</b><p>주민번호·전화번호·카드번호는 AI에 보내기 전에 자동으로 가립니다.</p></div><div class="feat rv"><span class="fi">5</span><b>바탕화면 리모컨</b><p>편집 화면 없이 작은 창이나 휴대폰에서 버튼 하나로 자동화를 실행합니다.</p></div><div class="feat rv"><span class="fi">6</span><b>24시간 홈 서버</b><p>라즈베리 파이에 한 줄 설치로 올리면 컴퓨터를 꺼도 정해진 시간에 돌아갑니다.</p></div></div><p class="privacy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span><b>개인정보 보호</b> — 주민번호·전화번호·카드번호는 AI에 보내기 전에 자동으로 가리고, 다른 사람에게 넘기기 전에는 개인 AI 키와 작업 기록을 한 번에 지우는 정리 파일을 제공합니다.</span></p><div class="tech-row"><b>사용한 기술</b><div class="tech"><span>React</span><span>Tailwind CSS</span><span>Python</span><span>PowerShell</span><span>라즈베리 파이 · 리눅스</span><span>GitHub Actions</span></div><a class="src-link" href="https://github.com/sh11025/autoflow" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
+  classDef hot fill:#E4E7FF,stroke:#2B3BFF,stroke-width:2px,color:#0B0F2A
+  classDef navy fill:#0B0F2A,stroke:#0B0F2A,color:#FFFFFF
+  classDef soft fill:#E9ECF6,stroke:#D8DCEC,color:#0B0F2A
+  classDef tool fill:#FFFFFF,stroke:#0B0F2A,stroke-width:1.5px,color:#0B0F2A</pre><div class="mm-fb"><ol class="fb-flow"><li>쓰는 곳</li><li>실행 서버</li><li>자동화 엔진</li><li>바깥 연결</li></ol></div></div></figure><div class="sub"><h3>핵심 기능</h3><p>6가지</p></div><div class="g c3"><div class="feat rv"><span class="fi">1</span><b>쉬운 모드 · 전문가 모드</b><p>위에서 아래로 쌓는 카드 모드와, 넓은 판 위에 선으로 잇는 캔버스 모드를 오가며 만듭니다.</p></div><div class="feat rv"><span class="fi">2</span><b>업무별 견본 16종</b><p>재무, 마케팅, 기획, 영업, 법무 견본을 한 번에 가져와 바로 돌립니다.</p></div><div class="feat rv"><span class="fi">3</span><b>AI에게 말로 시키기</b><p>하고 싶은 일을 말로 적으면 AI가 블록 순서를 짜 줍니다.</p></div><div class="feat rv"><span class="fi">4</span><b>개인정보 자동 가리기</b><p>주민번호·전화번호·카드번호는 AI에 보내기 전에 자동으로 가립니다.</p></div><div class="feat rv"><span class="fi">5</span><b>바탕화면 리모컨</b><p>편집 화면 없이 작은 창이나 휴대폰에서 버튼 하나로 자동화를 실행합니다.</p></div><div class="feat rv"><span class="fi">6</span><b>24시간 홈 서버</b><p>라즈베리 파이에 한 줄 설치로 올리면 컴퓨터를 꺼도 정해진 시간에 돌아갑니다.</p></div></div><p class="privacy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span><b>개인정보 보호</b> — 주민번호·전화번호·카드번호는 AI에 보내기 전에 자동으로 가리고, 다른 사람에게 넘기기 전에는 개인 AI 키와 작업 기록을 한 번에 지우는 정리 파일을 제공합니다.</span></p><div class="tech-row"><b>사용한 기술</b><div class="tech"><span>React</span><span>Tailwind CSS</span><span>Python</span><span>PowerShell</span><span>라즈베리 파이 · 리눅스</span><span>GitHub Actions</span></div><a class="src-link" href="https://github.com/sh11025/autoflow" target="_blank" rel="noopener"><svg class="gh" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.34.66.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>코드 보기</a></div>
 </div></section>
 <section class="sec" id="shots"><div class="wrap">
 <div class="head"><div class="eyebrow">화면</div><h2>화면 모아보기 <span class="note">6장</span></h2><p>이미지를 누르면 크게 볼 수 있고, 크게 본 상태에서 ← → 키로 넘길 수 있어요.</p></div>
@@ -80,7 +81,7 @@
   <a class="end-a" href="story-dam-ieum.html"><span>← 이전 작업</span><b>스토리 담 이음</b></a>
   <a class="end-a r" href="promaru.html"><span>다음 작업 →</span><b>프롬마루</b></a>
 </nav>
-<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html">스토리 담 이음</a><a href="autoflow.html" class="on" aria-current="page">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
+<div class="all-works"><span>전체 작업</span><a href="story-dam-ieum.html">스토리 담 이음</a><a href="autoflow.html" class="on" aria-current="page">AutoFlow Studio</a><a href="promaru.html">프롬마루</a><a href="livedock.html">라이브도크</a><a href="seoul-housing.html">서울 주거 데이터 스토리</a><a href="hometeo.html">홈터</a><a href="worktone.html">일잘러 문장</a><a href="fitcoach.html">FitCoach</a><a href="ootd.html">AI OOTD 스타일리스트</a><a href="virtual-deck.html">Virtual Deck</a><a href="mookdog.html">묵독</a><a href="poom.html">쇼핑몰 화면 따라 만들기</a><a href="webtoon.html">웹툰 알림판</a><a href="markview.html">MarkView</a><a href="press-cms.html">PRESS-CMS</a><a href="gyeongseong.html">경성야록</a></div>
 <div class="btns"><a class="btn ghost" href="../index.html">홈으로</a><a class="btn coral" href="../index.html#contact">연락하기</a></div>
 </div></section>
 </main>
