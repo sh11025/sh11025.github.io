@@ -8,7 +8,6 @@
 | 포트폴리오 | https://sh11025.github.io |
 | PDF 받기 | https://sh11025.github.io/assets/ShinJaeWan_portfolio.pdf |
 | 깃허브 | https://github.com/sh11025 |
-| 이메일 | shin11025@kakao.com |
 
 ## 이렇게 보세요
 
