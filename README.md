@@ -5,8 +5,8 @@
 
 | | 주소 |
 |---|---|
-| 포트폴리오 | https://sh11025.github.io |
-| PDF 받기 | https://sh11025.github.io/assets/ShinJaeWan_portfolio.pdf |
+| 포트폴리오 | https://sh11025.github.io/ShinJaeWan_portfolio/ |
+| PDF 받기 | [PDF 내려받기](https://github.com/sh11025/ShinJaeWan_portfolio/raw/main/assets/ShinJaeWan_portfolio.pdf) |
 | 깃허브 | https://github.com/sh11025 |
 
 ## 이렇게 보세요
@@ -19,27 +19,27 @@
 
 | 프로젝트 | 한 줄 소개 | 코드 | 써 보기 | 자세히 |
 |---|---|---|---|---|
-| **스토리 담 이음** | 채용공고에서 면접까지 한 흐름으로 | [코드](https://github.com/sh11025/story-dam-ieum) | [써 보기 ↗](https://story-dam-ieum.onrender.com/) | [상세](https://sh11025.github.io/projects/story-dam-ieum.html) |
-| **AutoFlow Studio** | AI 업무 자동화를 블록처럼 짜는 작업실 | [코드](https://github.com/sh11025/autoflow) | [설치 파일 ↓](https://github.com/sh11025/autoflow/releases/latest/download/autoflow-windows.zip) | [상세](https://sh11025.github.io/projects/autoflow.html) |
-| **프롬마루** | 한국어 아이디어를 AI용 지시문으로 | [코드](https://github.com/sh11025/Prom_Maru) | [써 보기 ↗](https://prom-maru.onrender.com/) | [상세](https://sh11025.github.io/projects/promaru.html) |
-| **라이브도크** | 방송 서버 상태를 한눈에 | [코드](https://github.com/sh11025/LiveDock) | [웹으로 써 보기 ↗](https://sh11025.github.io/LiveDock_web/public/index.html) · [설치 파일 ↓](https://github.com/sh11025/LiveDock/releases/latest/download/LiveDock.exe) | [상세](https://sh11025.github.io/projects/livedock.html) |
-| **서울 주거 데이터 스토리** | 전월세 거래 81만 건을 이야기와 그래프로 | [코드](https://github.com/sh11025/SEOUL_HOUSING_DATA) | [써 보기 ↗](https://sh11025.github.io/SEOUL_HOUSING_DATA/) | [상세](https://sh11025.github.io/projects/seoul-housing.html) |
-| **홈터** | 홈페이지를 짓는 터 | [코드](https://github.com/sh11025/hometeo) | [써 보기 ↗](https://hometeo.onrender.com/) | [상세](https://sh11025.github.io/projects/hometeo.html) |
-| **일잘러 문장** | WorkTone · 업무 문구 도우미 | [코드](https://github.com/sh11025/Work_Tone) | [써 보기 ↗](https://sh11025.github.io/Work_Tone/) | [상세](https://sh11025.github.io/projects/worktone.html) |
-| **FitCoach** | AI 자기소개서 코치 | [코드](https://github.com/sh11025/Fitcoach) | [써 보기 ↗](https://sh11025.github.io/Fitcoach/) | [상세](https://sh11025.github.io/projects/fitcoach.html) |
-| **AI OOTD 스타일리스트** | 날씨와 일정에 맞춘 AI 코디 추천 | [코드](https://github.com/sh11025/AI-OOTD-Stylist) | [설치 파일 ↓](https://github.com/sh11025/AI-OOTD-Stylist/releases/latest/download/AI_OOTD_Stylist.exe) | [상세](https://sh11025.github.io/projects/ootd.html) |
-| **Virtual Deck** | 화면 위에 띄워 두는 투명 유리 버튼판 | [코드](https://github.com/sh11025/Virtual_Deck) | [설치 파일 ↓](https://github.com/sh11025/Virtual_Deck/raw/main/dist/VirtualDeck-1.6.3-Setup.exe) | [상세](https://sh11025.github.io/projects/virtual-deck.html) |
-| **묵독** | 온라인 서점 | [코드](https://github.com/sh11025/MOOKDOG) | [써 보기 ↗](https://sh11025.github.io/MOOKDOG/) | [상세](https://sh11025.github.io/projects/mookdog.html) |
-| **쇼핑몰 화면 따라 만들기** | 실제 쇼핑몰을 따라 만든 연습 화면 | [코드](https://github.com/sh11025/page_poom_clone) | [써 보기 ↗](https://sh11025.github.io/page_poom_clone/main.html) | [상세](https://sh11025.github.io/projects/poom.html) |
-| **웹툰 알림판** | 요일별로 모아 보는 나만의 웹툰 알림판 | [코드](https://github.com/sh11025/webtoon_clock) | [써 보기 ↗](https://sh11025.github.io/webtoon_clock/) | [상세](https://sh11025.github.io/projects/webtoon.html) |
-| **MarkView** | 마크다운 글쓰기 도구 | [코드](https://github.com/sh11025/MarkView) | [써 보기 ↗](https://sh11025.github.io/MarkView/) | [상세](https://sh11025.github.io/projects/markview.html) |
+| **스토리 담 이음** | 채용공고에서 면접까지 한 흐름으로 | [코드](https://github.com/sh11025/story-dam-ieum) | [써 보기 ↗](https://story-dam-ieum.onrender.com/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/story-dam-ieum.html) |
+| **AutoFlow Studio** | AI 업무 자동화를 블록처럼 짜는 작업실 | [코드](https://github.com/sh11025/autoflow) | [설치 파일 ↓](https://github.com/sh11025/autoflow/releases/latest/download/autoflow-windows.zip) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/autoflow.html) |
+| **프롬마루** | 한국어 아이디어를 AI용 지시문으로 | [코드](https://github.com/sh11025/Prom_Maru) | [써 보기 ↗](https://prom-maru.onrender.com/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/promaru.html) |
+| **라이브도크** | 방송 서버 상태를 한눈에 | [코드](https://github.com/sh11025/LiveDock) | [웹으로 써 보기 ↗](https://sh11025.github.io/LiveDock_web/public/index.html) · [설치 파일 ↓](https://github.com/sh11025/LiveDock/releases/latest/download/LiveDock.exe) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/livedock.html) |
+| **서울 주거 데이터 스토리** | 전월세 거래 81만 건을 이야기와 그래프로 | [코드](https://github.com/sh11025/SEOUL_HOUSING_DATA) | [써 보기 ↗](https://sh11025.github.io/SEOUL_HOUSING_DATA/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/seoul-housing.html) |
+| **홈터** | 홈페이지를 짓는 터 | [코드](https://github.com/sh11025/hometeo) | [써 보기 ↗](https://hometeo.onrender.com/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/hometeo.html) |
+| **일잘러 문장** | WorkTone · 업무 문구 도우미 | [코드](https://github.com/sh11025/Work_Tone) | [써 보기 ↗](https://sh11025.github.io/Work_Tone/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/worktone.html) |
+| **FitCoach** | AI 자기소개서 코치 | [코드](https://github.com/sh11025/Fitcoach) | [써 보기 ↗](https://sh11025.github.io/Fitcoach/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/fitcoach.html) |
+| **AI OOTD 스타일리스트** | 날씨와 일정에 맞춘 AI 코디 추천 | [코드](https://github.com/sh11025/AI-OOTD-Stylist) | [설치 파일 ↓](https://github.com/sh11025/AI-OOTD-Stylist/releases/latest/download/AI_OOTD_Stylist.exe) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/ootd.html) |
+| **Virtual Deck** | 화면 위에 띄워 두는 투명 유리 버튼판 | [코드](https://github.com/sh11025/Virtual_Deck) | [설치 파일 ↓](https://github.com/sh11025/Virtual_Deck/raw/main/dist/VirtualDeck-1.6.3-Setup.exe) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/virtual-deck.html) |
+| **묵독** | 온라인 서점 | [코드](https://github.com/sh11025/MOOKDOG) | [써 보기 ↗](https://sh11025.github.io/MOOKDOG/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/mookdog.html) |
+| **쇼핑몰 화면 따라 만들기** | 실제 쇼핑몰을 따라 만든 연습 화면 | [코드](https://github.com/sh11025/page_poom_clone) | [써 보기 ↗](https://sh11025.github.io/page_poom_clone/main.html) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/poom.html) |
+| **웹툰 알림판** | 요일별로 모아 보는 나만의 웹툰 알림판 | [코드](https://github.com/sh11025/webtoon_clock) | [써 보기 ↗](https://sh11025.github.io/webtoon_clock/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/webtoon.html) |
+| **MarkView** | 마크다운 글쓰기 도구 | [코드](https://github.com/sh11025/MarkView) | [써 보기 ↗](https://sh11025.github.io/MarkView/) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/markview.html) |
 
 ## 팀 프로젝트 (2개)
 
 | 프로젝트 | 한 줄 소개 | 코드 | 써 보기 | 자세히 |
 |---|---|---|---|---|
-| **PRESS-CMS** | 기사 작성·검토·출고를 한곳에서 | [코드](https://github.com/INTP-ENFJ/A-TEAM) | [써 보기 ↗](https://a-team-press-cms.onrender.com/#/dashboard) | [상세](https://sh11025.github.io/projects/press-cms.html) |
-| **경성야록** | 1930년대 신문 꼴의 미스터리 웹 아카이브 | [코드](https://github.com/ejdms499-wq/gyeongseong-yarok_v) | [써 보기 ↗](https://ejdms499-wq.github.io/gyeongseong-yarok_v/index.html) | [상세](https://sh11025.github.io/projects/gyeongseong.html) |
+| **PRESS-CMS** | 기사 작성·검토·출고를 한곳에서 | [코드](https://github.com/INTP-ENFJ/A-TEAM) | [써 보기 ↗](https://a-team-press-cms.onrender.com/#/dashboard) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/press-cms.html) |
+| **경성야록** | 1930년대 신문 꼴의 미스터리 웹 아카이브 | [코드](https://github.com/ejdms499-wq/gyeongseong-yarok_v) | [써 보기 ↗](https://ejdms499-wq.github.io/gyeongseong-yarok_v/index.html) | [상세](https://sh11025.github.io/ShinJaeWan_portfolio/projects/gyeongseong.html) |
 
 - **PRESS-CMS** — 완성 · 11.11 최종 발표 · 프로젝트 09.17 ~ 11.11 · 내 작업 09.17 ~ 10.20
 - **경성야록** — 완성 · 프로젝트 09.17 ~ 11.11 · 내 작업 10.15 ~ 10.21
