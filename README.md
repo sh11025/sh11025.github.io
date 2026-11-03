@@ -41,8 +41,8 @@
 | **PRESS-CMS** | 기사 작성·검토·출고를 한곳에서 | [코드](https://github.com/INTP-ENFJ/A-TEAM) | [써 보기 ↗](https://a-team-press-cms.onrender.com/#/dashboard) | [상세](https://sh11025.github.io/projects/press-cms.html) |
 | **경성야록** | 1930년대 신문 꼴의 미스터리 웹 아카이브 | [코드](https://github.com/ejdms499-wq/gyeongseong-yarok_v) | [써 보기 ↗](https://ejdms499-wq.github.io/gyeongseong-yarok_v/index.html) | [상세](https://sh11025.github.io/projects/gyeongseong.html) |
 
-- **PRESS-CMS** — 완성 · 11.11 최종 발표 · 프로젝트 09.17 ~ 11.11 · 내 작업 09.17 ~ 10.20
-- **경성야록** — 완성 · 프로젝트 09.17 ~ 11.11 · 내 작업 10.16 ~ 10.21
+- **PRESS-CMS** — 완성 · 11.11 최종 발표 · 프로젝트 09.17 ~ 11.11
+- **경성야록** — 완성 · 프로젝트 09.17 ~ 11.11
 
 ## 알아 두세요
 

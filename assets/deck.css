@@ -766,3 +766,38 @@ html.pdf .cf-in{display:none!important}
 .rshot .shot{flex:0 0 46%;padding:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden;background:#fff;cursor:zoom-in}
 .rshot img{display:block;width:100%;height:auto}
 .rshot p{color:var(--ink-3);font-size:.92rem}
+.tw .checks li{display:grid;grid-template-columns:auto 1fr;column-gap:.5rem;align-items:start}
+.tw .checks li b{font-weight:700}
+.tw .checks li span{grid-column:2;color:var(--ink-2);font-size:.92rem}
+.tw2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap);align-items:start}
+.tw2-r{display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.tw2-m{grid-column:1/-1}
+.mgrid{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1.4rem;margin-top:.6rem}
+.mgrid li{display:flex;flex-direction:column;gap:.1rem;padding-left:1.4rem;position:relative}
+.mgrid li::before{content:"✓";position:absolute;left:0;top:0;color:var(--navy);font-weight:800}
+.mgrid li b{font-weight:700}
+.mgrid li span{color:var(--ink-2);font-size:.9rem;line-height:1.45}
+.rlink{margin-top:.7rem;background:none;border:0;padding:0;color:var(--navy);font:inherit;font-weight:600;font-size:.9rem;cursor:pointer;text-align:left}
+@media (max-width:1100px){.tw2{grid-template-columns:minmax(0,1fr)}.mgrid{grid-template-columns:minmax(0,1fr)}}
+.tw2 h4{font-size:1rem}
+.tw2 .members li{padding:.45rem .7rem}
+.tw2 .members li b{font-size:.98rem}
+.tw2 .members li span{font-size:.9rem;line-height:1.4}
+.tw2 .mgrid{gap:.4rem 1.4rem;margin-top:.4rem}
+.tw2 .mgrid li b{font-size:.98rem}
+.tw2 .mgrid li span{font-size:.84rem;line-height:1.4}
+.tw2 .tchips .chip{font-size:.82rem;padding:.3rem .65rem}
+.tw2 .mini-flow li{padding:.4rem .6rem}
+.tw2 .mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1100px){.tw2 .mgrid{grid-template-columns:minmax(0,1fr)}}
+.tw2 .tw2-r{display:block}
+.tw2 .tw2-r .mini-flow{margin-top:.4rem}
+.tw2{gap:.8rem}
+.tw2 .card{padding:.9rem 1.2rem}
+.tw2 .mgrid{gap:.25rem 1.4rem}
+.tw2 .mgrid li{gap:0}
+.tw2 .mgrid li span{line-height:1.32}
+.kv{display:grid;gap:.35rem;margin-top:.7rem}
+.kv div{display:flex;gap:.8rem;font-size:.92rem}
+.kv dt{flex:0 0 6.5rem;color:var(--ink-3)}
+.kv dd{margin:0;font-weight:600}
