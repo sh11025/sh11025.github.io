@@ -756,3 +756,13 @@ html.pdf .cf-in{display:none!important}
 .is-deck .tflow .mini-flow li{--g:18px}
 .is-deck .tp .mini-flow li{--g:14px}
 .is-deck .mini-flow li:not(:last-child)::after{left:100%;right:auto;width:var(--g);text-align:center;font-size:11px;line-height:1;z-index:2;pointer-events:none}
+.rel{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--navy);padding:.1rem .5rem;border-radius:999px;margin-right:.35rem;vertical-align:middle}
+.tm-role{font-weight:700;font-size:1.02rem}
+.tw .tw-r{display:flex;flex-direction:column;gap:var(--gap)}
+.rshot .shot{width:100%;display:block;text-align:left}
+.tchips{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.tchips .chip b{font-weight:700}
+.rshot{display:flex;gap:1rem;align-items:center}
+.rshot .shot{flex:0 0 46%;padding:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden;background:#fff;cursor:zoom-in}
+.rshot img{display:block;width:100%;height:auto}
+.rshot p{color:var(--ink-3);font-size:.92rem}
