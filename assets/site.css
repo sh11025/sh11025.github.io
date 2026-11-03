@@ -199,7 +199,7 @@ svg.i{fill:none;stroke:var(--coral-text);stroke-width:2;stroke-linecap:round;str
 .chart{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1rem,1.8vw,1.4rem);display:flex;flex-direction:column;gap:.8rem}
 .chart-h{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;flex-wrap:wrap}
 .chart-h b{font-size:1.05rem}
-.bars{display:flex;flex-direction:column;gap:.5rem}
+.bars{display:flex;flex-direction:column;gap:.38rem}
 .bars li{display:grid;grid-template-columns:minmax(7rem,13.5rem) minmax(0,1fr) 3.2rem;gap:.7rem;align-items:center}
 .bars .bl{font-size:.86rem;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bars .bt{height:14px;background:var(--bg);border-radius:4px;overflow:hidden}
@@ -208,7 +208,10 @@ svg.i{fill:none;stroke:var(--coral-text);stroke-width:2;stroke-linecap:round;str
 .bars.go .bt i{width:var(--w)}
 .bars b{font-size:.88rem;text-align:right;font-variant-numeric:tabular-nums}
 .series{display:flex;flex-direction:column;gap:var(--gap)}
-.ser{display:flex;flex-direction:column;gap:.55rem}
+.ser{display:flex;flex-direction:column;gap:.45rem}
+.series .ser{padding-block:.9rem}
+.series .ser-num div{padding:.4rem .7rem}
+.series{gap:.8rem}
 .ser-h{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .pill{font-size:.72rem;font-weight:800;letter-spacing:.08em;color:#fff;background:var(--navy);padding:.15rem .6rem;border-radius:999px}
 .pill.coral{background:var(--coral);color:#fff}
@@ -694,3 +697,8 @@ p,li,.lead,small,.note{text-wrap:pretty}
 }
 .wake[hidden]{display:none!important}
 @media (max-width:640px){.mk-num span{line-height:1.4;display:block}}
+.series .ser p{font-size:.86rem}
+.series .ser-num b{font-size:1.1rem}
+.series .ser{gap:.35rem;padding-block:.75rem}
+.series .ser-num div{padding:.32rem .65rem}
+.series .ser-num span{font-size:.72rem}
